@@ -167,6 +167,33 @@ cases npornq with
 | inl np => have p := pq.left ; exact np p
 | inr nq => have q := pq.right ; exact nq q
 
+theorem shitty_demorgan (P Q : Prop):  ¬ ¬ ((¬ P) ∨ (¬ Q)) ↔  ¬ (P ∧ Q) := by
+constructor
+-- Case 1
+intro nn_npornq
+intro pq
+apply nn_npornq 
+intro npornq
+cases npornq with
+| inl np => have p := pq.left ; exact np p
+| inr nq => have q := pq.right ; exact nq q
+-- Case 2
+intro n_pandq
+intro h1 
+have nnp : ¬ ¬ P := fun np : ¬ P => by 
+  apply h1 
+  exact Or.inl np 
+apply nnp 
+intro p 
+have nnq : ¬ ¬ Q := fun nq : ¬ Q => by 
+  apply h1 
+  exact Or.inr nq
+apply nnq
+intro q
+apply n_pandq 
+constructor 
+assumption 
+assumption
 
 
 theorem exponential_identity (P : Prop) : P ↔ ( True → P) := by
@@ -176,3 +203,5 @@ exact fun t : True => p
 intro tr_imp_p 
 apply tr_imp_p 
 trivial
+
+
