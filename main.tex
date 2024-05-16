@@ -1,0 +1,59 @@
+\documentclass[article,10pt]{memoir}
+
+
+\usepackage[lastexercise]{exercise}
+\usepackage[lastexercise, answerdelayed]{exercise}
+
+\counterwithin{Exercise}{chapter}
+\counterwithin{Answer}{chapter}
+\renewcounter{Exercise}[chapter]
+
+\usepackage{preamble}
+
+
+
+
+\addbibresource{mybib.bib} 
+\title{Category Theory Lecture Notes}
+\author{Nicole Venner}
+\date{\today}
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+
+\includeonly{chapters/locales}
+
+\begin{document}
+
+
+
+\include{chapters/introduction}
+\include{chapters/evidence}
+\include{chapters/logic1}
+\include{chapters/categories1}
+\include{chapters/categories2}
+\include{chapters/incompleteness}
+\include{chapters/types}
+\include{chapters/subobjects}
+
+
+\include{chapters/locales}
+\include{chapters/categories3}
+\include{chapters/yoneda}
+\include{chapters/reals}
+
+\printbibliography
+\chapter{Solutions}
+\shipoutAnswer
+\include{chapters/appendix}
+
+
+\end{document}

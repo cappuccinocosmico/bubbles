@@ -1,0 +1,57 @@
+\begin{definition}
+    For any categories $A$, $B$, and an element $c \in B$, there is a constant functor $A \xrightarrow[]{\delta c} B$ that maps every object in $A$ onto $c$ and every morphism in $A$ onto $id_c$
+\end{definition}
+
+Consider a map from small category, that looks like a diagram
+% https://q.uiver.app/#q=WzAsOSxbMCwwLCJcXGJ1bGxldCJdLFswLDEsIlxcYnVsbGV0Il0sWzAsMiwiXFxidWxsZXQiXSxbMSwwLCJcXG1hcHN0byJdLFsxLDEsIlxcbWFwc3RvIl0sWzEsMiwiXFxtYXBzdG8iXSxbMiwwLCJBIl0sWzIsMSwiQiJdLFsyLDIsIkMiXSxbMCwxXSxbMSwyXSxbNiw3LCJmIiwyXSxbNyw4LCJnIiwyXV0=
+\[\begin{tikzcd}
+	\bullet & \mapsto & x \\
+	\bullet & \mapsto & y \\
+	\bullet & \mapsto & z
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=2-1, to=3-1]
+	\arrow["f"', from=1-3, to=2-3]
+	\arrow["g"', from=2-3, to=3-3]
+\end{tikzcd}\]
+
+And now consider the constant functor for some $c$. Then what would a natural transformation $\mu$ from $F$ to $\delta c$ would be a 
+
+
+
+\begin{comment}
+\begin{Exercise}
+    \begin{itemize}
+        \item [(a)] Let $A$ and $B$ be finite sets. Show that their union $A \cup B$ is finite.
+        
+        \item [(b)] Show that the union of finitely many finite sets is finite.
+    \end{itemize}
+    
+\end{Exercise}
+\begin{Answer}
+    We shall use category theory for this proof in an attempt to prove that it is a practical branch of mathematics that can be used to prove real results.\footnote{Also because being a contrarian is fun :)} Since we have a grothendiek universe $V_\omega$ we know that any union of two hereditary finite sets is hereditary finite, but we dont know the same about finite sets in general. 
+    
+    Our method for proving this will be to use some category theory, to first describe how the union of 2 sets, $A\cup B$ is a categorical construction, then since categorical constructions respect equivalences if the category of finite sets $FinSet$ is equivalent to $V_\omega$ then since $V_\omega$ is closed under unions then so is $FinSet$.
+    
+    So how would we construct the set $A \cup B$ using only the properties of functions?  $A$ and $B$ their union can be determined without using set inclusion by using the fact that $A \cap B$ is a subset of $A$ and $B$ and therefore has an inclusion function $A\cap B \stackrel{f}{\hookrightarrow} A$ and $A\cap B \stackrel{f}{\hookrightarrow} B$. We can then construct the union $A\cup B$ by saying that its the "smallest" set where there the inclusion function $A \xrightarrow{f^*} A \cup B$ and $B \xrightarrow{g^*} A \cup B$, such that $g^* \circ g = f^* \circ f$.
+   \[\begin{tikzcd}
+    	A & {A \cup B} \\
+    	{A\cap B} & B
+    	\arrow["f", tail, from=2-1, to=1-1]
+    	\arrow["g"', tail, from=2-1, to=2-2]
+    	\arrow[dashed, tail, from=1-1, to=1-2]
+    	\arrow[dashed, tail, from=2-2, to=1-2]
+    	\arrow["\lrcorner"{anchor=center, pos=0.125, rotate=90}, draw=none, from=2-1, to=1-2]
+    \end{tikzcd}\]
+     This can be formalized using the concept of co-limits and pullbacks, but what exactly this construction is doesnt end up mattering since all it needs to show us is that you can construct construct $A\cup B$ without any inclusion or subset rules if you define $A$,$B$ and $A\cup B$ and the appropriate inclusion functions. 
+
+    All that needs to be shown is that $A\cap B$ is finite, luckily since $A \cap B$ is a subset of a finite set $A$ then it is finite as shown in the previous exercise.
+
+    A finite union can also be represented as a finite categorical construction, but it might be simpler to bail out and use induction. Consider $A$ to be the subset of integers where a union of $n$ finite sets is finite. We know that $0$ in a since a union of no sets is the empty set. If $n \in A$ then consider a family of sets $\{X_i | i \in n^+\}$, then $\bigcup_{i \in n} X_i$ is finite and since the union of 2 sets is finite we know that
+    \begin{align*}
+        \bigcup_{i \in n^+} X_i &= X_{n^+}\bigcup_{i \in n^+} X_i
+    \end{align*}
+    is finite. Thus by induction $A=\mathbb{N}$ and we are done.
+\end{Answer}
+
+\end{comment}
+
