@@ -1,6 +1,4 @@
-import Mathlib.Tactic
 open Nat
-
 
 theorem zeroneq (n : Nat) : n+1 ≠ 0 := by 
 simp [Nat.add_one_ne_zero]
@@ -31,36 +29,28 @@ exact h.symm
 theorem addative_identity (n : Nat ) : n + 0 = n := by
 simp 
 
+theorem add_cancel
+
+theorem any_num_geq_0 (n : Nat):n ≥ 0 := by
+simp
+
+theorem two_foil (a b c d : Nat) : (a+b)*(c+d) = a*c+a*d+b*c+b*d := by 
+rw [Nat.add_mul]
+rw [Nat.mul_add]
+rw [Nat.mul_add]
+rw [<-Nat.add_assoc]
 
 
+theorem nsquared_geq_n (n : Nat) : n * n ≥ n := by 
+induction n with 
+| zero => simp 
+| succ m ih => 
+    rw [ two_foil m 1 m 1]
+    simp
+    nth_rw  [<-Nat.add_zero m]
 
+    
 
-
--- theorem eq_decidable (n m : Nat) : n=m ∨ ¬ (n=m) := by
---   have zeroeq_decidable (n : Nat) :n=0 ∨ ¬ (n=0) := by
---     induction' n with n nh
---     have zeroeq : 0=0 := by rfl;
---     exact Or.inl zeroeq
---     have nplusneqzero : n+1 ≠ 0 := zeroneq n 
---     exact Or.inr nplusneqzero
---   have zeroeq_decidable_flipped (n : Nat) : 0 = n ∨ ¬0 = n := by 
---     have nzero := zeroeq_decidable n
---     cases' nzero with hleft hright 
---     exact Or.inl hleft.symm
---     have fhright := fun x : 0=n => hright x.symm 
---     exact Or.inr fhright
---   induction n with 
---   | zero  => exact zeroeq_decidable_flipped m 
---   | succ k ih => 
---     cases ih with
---     | inl lh => 
---       have khm : k+1 ≠ m := by 
---         simp [lh]
---       exact Or.inr khm
---     | inr rh => 
---       induction m with 
---       | zero => exact Or.inr (zeroneq k)
---       | succ m ih => sorry
     
 
   
