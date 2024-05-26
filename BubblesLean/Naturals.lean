@@ -29,7 +29,6 @@ exact h.symm
 theorem addative_identity (n : Nat ) : n + 0 = n := by
 simp 
 
-theorem add_cancel
 
 theorem any_num_geq_0 (n : Nat):n ≥ 0 := by
 simp
@@ -41,13 +40,48 @@ rw [Nat.mul_add]
 rw [<-Nat.add_assoc]
 
 
-theorem nsquared_geq_n (n : Nat) : n * n ≥ n := by 
-induction n with 
-| zero => simp 
-| succ m ih => 
-    rw [ two_foil m 1 m 1]
-    simp
-    nth_rw  [<-Nat.add_zero m]
+theorem abmul (a b : Nat) : b ≥ 1 → a *b ≥ a := by
+intro bgeq1 
+induction b with
+| zero =>
+  exfalso 
+  have zerog1 : 1 > 0 := by simp
+  have nlem := (Nat.not_le.mpr zerog1)
+  exact nlem bgeq1
+| succ k  ih =>
+  simp
+  rw [Nat.mul_add, Nat.mul_one,Nat.add_comm]
+  apply Nat.le_add_right 
+
+
+
+
+theorem nk_geq_n (n k: Nat) : k ≥ 1 → n ^ k ≥ n := by 
+intro kgeq1
+induction k with 
+| zero => 
+  exfalso 
+  have zerog1 : 1 > 0 := by simp
+  have nlem := (Nat.not_le.mpr zerog1)
+  exact nlem kgeq1
+| succ k ih =>
+  rw [Nat.pow_add,Nat.pow_one]
+  have lem := abmul n (n^k)
+  rw [Nat.add_com, ]
+  apply lem 
+  
+
+
+  
+
+
+
+  
+
+
+
+
+
 
     
 
