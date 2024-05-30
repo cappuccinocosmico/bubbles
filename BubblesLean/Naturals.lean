@@ -40,7 +40,7 @@ rw [Nat.mul_add]
 rw [<-Nat.add_assoc]
 
 
-theorem abmul (a b : Nat) : b ≥ 1 → a *b ≥ a := by
+theorem abmul (a b : Nat) : b ≥ 1 → a ≤  a *b  := by
 intro bgeq1 
 induction b with
 | zero =>
@@ -49,29 +49,45 @@ induction b with
   have nlem := (Nat.not_le.mpr zerog1)
   exact nlem bgeq1
 | succ k  ih =>
-  simp
   rw [Nat.mul_add, Nat.mul_one,Nat.add_comm]
   apply Nat.le_add_right 
 
 
+theorem le_trans ( a b c : Nat) : (a ≤ b) ∧ (b ≤ c) → a ≤ c := by
+intro h 
+have test1 := Nat.le
+have p1 := h.left 
+have p2 := h.right 
+have test := Nat.le_trans p1 p2
+assumption
 
 
-theorem nk_geq_n (n k: Nat) : k ≥ 1 → n ^ k ≥ n := by 
-intro kgeq1
-induction k with 
+
+
+theorem nk_geq_n (n k: Nat) : n ≥ 1 ∧ k ≥ 1 → n ≤ n ^ k := by 
+intro hyp
+have npos := hyp.left 
+have kpos := hyp.right 
+induction n with 
 | zero => 
   exfalso 
   have zerog1 : 1 > 0 := by simp
   have nlem := (Nat.not_le.mpr zerog1)
-  exact nlem kgeq1
-| succ k ih =>
-  rw [Nat.pow_add,Nat.pow_one]
-  have lem := abmul n (n^k)
-  rw [Nat.add_com, ]
-  apply lem 
-  
+  exact nlem npos
+| succ m ih =>
+  induction k with
+  | zero =>
+    exfalso 
+    have zerog1 : 1 > 0 := by simp
+    have nlem := (Nat.not_le.mpr zerog1)
+    exact nlem kpos
+    
 
 
+    
+
+
+    
   
 
 
