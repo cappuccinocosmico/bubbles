@@ -1,0 +1,91 @@
+# Hine-Borel theorem for Locales
+
+Definitions 4.1. Given rational numbers a and b and a positive natural
+number n, a 2n-tuple (a 1,b 1,...,a n,b n) of rational numbers forms a
+zigzag of length n from a to b if we have:
+
+a=a 1, b=b n, and b i\>a i+ for i=1,...,n−1.
+
+A zigzag of positive length is orderly if we additionally have:
+
+a i\<a i+ for i=1,...,n−1, a i\<b i for i=1,...,n, and b i\<b i+ for
+i=1,...,n−1.
+
+As a technicality, if a≥b, then we also count the empty 0-tuple as an
+orderly zigzag of length 0 from a to b. (Notice that no zigzag of
+positive length can be orderly from a to b when a≥b.)
+
+Given additionally a collection �� of opens, a zigzag (orderly or not)
+has zigs from �� if every pair (a i,b i) is contained in at least one
+member of ��.
+
+Now we can replace any zigzag with an orderly zigzag with zigs from the
+same opens:
+
+Lemma 4.2. (Zigzag Lemma)
+
+Given rational numbers a and b, a natural number n, a collection �� of
+opens, and a zigzag from a to b of length n with zigs from ��, there
+exists an orderly zigzag from a to b of length at most n with zigs from
+��.
+
+Proof. If a≥b, then we use a zigzag of length 0. Otherwise, we assume
+that a\<b and prove the lemma by induction on n. If n=1, then the
+original zigzag is orderly since a\<b.
+
+Now assume (as an inductive hypothesis) that the lemma holds for zigzags
+of length k for some k≥1. A zigzag of length k+ consists of a zig
+(a,b 1) from some open in ��, a zag b 1\>a 2, and a zigzag of length k
+from a 2 to b with zigs from ��. Using the inductive hypothesis, replace
+the zigzag of length k with an orderly zigzag of length l≤k from a 2 to
+b=b l+ with zigs from ��. We now have a zigzag of length l+≤k+ from a to
+b with zigs from ��.
+
+If a\<a 2 and b 1\<b 2, then also a\<a 2\<b 1, so this zigzag of length
+l+ from a to b is orderly.
+
+Next suppose that a\<a 2 but b 1≥b 2. In this case, consider the largest
+value of i≥2 such that b 1≥b i; if i=l+, then we can use the orderly
+zigzag of length 1 from a to b, which is contained in the same open as
+(a,b 1) was, since b 1≥b i=b. If i≤l instead, then take the orderly
+zigzag from a i+ to b, and precede it with the zig (a,b i), to get a
+zigzag of length l−i+2≤k from a to b. This zigzag is orderly, because
+a\<a 2\<a i+, and its zigs are from �� since (a,b i) is contained in the
+same open as (a,b 1) was (since b 1≥b i). So either way, we have an
+orderly zigzag of length at most k from a to b with zigs from ��.
+
+Finally, suppose that a≥a 2. In this case, consider the largest value of
+i≥2 such that a≥a i, take the orderly zigzag from a i to b, and change a
+i to a to get a zigzag from a to b. If i≤l, then this is orderly since
+a\<a i+\<b i; if i=l+, then this is orderly since a\<b=b i. Either way,
+(a,b i) belongs to the same open as (a i,b i) did (since a≥a i), so this
+orderly zigzag of length l−i+2≤k from a to b still has zigs from ��.
+
+In any case, we have a zigzag of length at most k+ from a to b with zigs
+from ��, and the induction is complete. ▮
+
+Definition 8.1. An open cover of the unit interval is a collection �� of
+opens in the real line such that ℝ is the join of (−∞,0), (1,∞), and the
+members of ��.
+
+Theorem 8.2. (Heine--Borel)
+
+Every open cover of the unit interval has a finite subcover.
+
+The proof is almost embarrassingly simple. The key point is that the
+construction of joins in terms of zigzags involves only finite zigzags,
+even for an infinitary join.
+
+Proof. Let J be the join of (−∞,0), (1,∞), and the members of ��. Since
+this equals ℝ, then in particular (−2,3)⊆J, and since (−1,2)⋐(−2,3), we
+get a corresponding zigzag ζ involving finitely many zigs using finitely
+many of the members of ��. Let �� be the collection of these members of
+��, and let K be the join of (−∞,0), (1,∞), and ��. Now if (a,b) is any
+pair of rational numbers, we construct a zigzag showing directly that
+(a,b)⊆K as follows: the zig (a,0)⊆(−∞,0), the zag 0\>−1, the zigzag ζ
+from −1 to 2, the zag 2\>1, and the zig (1,b)⊆(1,∞). This is always a
+valid zigzag, so K=ℝ. Therefore, the finite collection �� covers the
+unit interval. ▮
+
+::: lemma
+:::

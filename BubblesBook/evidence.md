@@ -1,0 +1,497 @@
+# Proofs and Evidence
+
+If our goal of mathematics is to try to formalize the validity of
+proofs, and study proofs as mathematical objects, it is unfortunately
+somewhat necessary to change our conventional understanding of what it
+means for a proposition to be true. Namely we need to introduce a
+primative mathematical notion of \"proofs\" and \"propositions\". Where
+all of the conventional behaviors defined of propositions defined in
+conventional propositional logic are reworked as rules regarding how
+properties interact with proofs.
+
+::: definition
+A proposition $p$ is true in $\Gamma$ if there exists a proof taking in
+some assumptions $\Gamma$ and producing a result of $p$.
+:::
+
+However this begs the question, well what are proofs? Well a proof is a
+primative mathematical object defined to be a list allowed mathematical
+operations that manipulate the assumptions that are thrown into a proof.
+Some examples might be helpful
+
+## And
+
+In conventional propositional logic, the conjunction operator \"and\" is
+defined by its truth table. However, in our new framework, we need to
+redefine it in terms of its interaction with proofs.
+
+::: definition
+If we have both a proof of $p$ and a proof of $q$, then we can construct
+a proof of $p \land q$.
+:::
+
+This is often denoted as:
+$$\frac{\pi_p : p, \pi_q : q}{\pi: p \land q}\quad(\text{and-intro})$$
+[^1]
+
+Where $\pi_p$ and $\pi_q$ are the proofs of $p$ and $q$ respectively.
+And $\pi$ is the combined proof of $p \land q$
+
+::: definition
+If we have a proof of $p \land q$, then we can construct a proof of $p$
+and a proof of $q$.
+:::
+
+This is often denoted as:
+
+$$\frac{\pi : p \land q}{\pi_p : p}\quad(\text{and-left})$$
+$$\frac{\pi : p \land q}{ \pi_q : q}\quad(\text{and-right})$$
+
+Where $\pi_p$ and $\pi_q$ are the projections of the proof $\pi$ onto
+$p$ and $q$ respectively.
+
+These rules capture the conventional behavior of the \"and\" operator,
+but now in terms of how it interacts with proofs. Note that these rules
+are not necessarily tied to the truth table of the \"and\" operator, but
+rather define how the operator behaves in the context of proofs.
+
+Unfortunately implication is slightly more complicated.
+
+## Implication
+
+The introduction rule for implication states that if we can prove $q$
+assuming $p$, then we can construct a proof of $p \Rightarrow q$.
+
+::: definition
+If we have a proof of $q$ from the assumption $p$, then we can construct
+a proof of $p \Rightarrow q$.
+:::
+
+This is often denoted as:
+$$\frac{\pi_p : p \vdash \pi_q : q}{\pi: p \Rightarrow q}\quad(\text{implication-intro})$$
+
+Where $\pi_p$ is the proof of $p$, $\pi_q$ is the proof of $q$ from the
+assumption $p$, and $\pi$ is the constructed proof of $p \Rightarrow q$.
+
+Whats somewhat weird about this is the symbol $\vdash$, although in some
+ways we have already been using it a bunch, since the following 2
+logical expressions
+
+$$a : A \vdash b : B \quad \text{is the same as} \quad \frac{a : A}{b : B}$$
+mean the same thing. The specifics of entailment and what it means is
+described in much greater detail in later chapters, so for now we can
+continue to the elimination rule.
+
+The elimination rule for implication, also known as modus ponens, states
+that if we have a proof of $p \Rightarrow q$ and a proof of $p$, then we
+can construct a proof of $q$.
+
+::: definition
+If we have a proof of $p \Rightarrow q$ and a proof of $p$, then we can
+construct a proof of $q$.
+:::
+
+This is often denoted as:
+$$\frac{\pi : p \Rightarrow q, \pi_p : p}{\pi_q : q}\quad(\text{implication-elim})$$
+
+Where $\pi$ is the proof of $p \Rightarrow q$, $\pi_p$ is the proof of
+$p$, and $\pi_q$ is the constructed proof of $q$.
+
+There is also a special symbol for propositional equivalence that gets
+used frequently.
+
+::: definition
+The proposition $A \iff B$ is short for
+$(A \implies B) \land (B \implies A)$
+:::
+
+Also oftentimes this symbol $\iff$ will get used a lot as
+
+## Or
+
+The introduction rules for \"or\" are in some sense mirrored versions of
+the elimination rules for \"and\" namely if we have a proof of either
+$q$, or $p$, then we can construct a proof of $p \lor q$.
+
+::: definition
+If we have a proof of $p$, then we can construct a proof of $p \lor q$.
+Likewise if we have a proof of $q$, then we can construct a proof of
+$p \lor q$.
+:::
+
+This is often denoted as:
+$$\frac{\pi_p : p}{\pi : p \lor q}\quad(\text{or-left})$$
+$$\frac{\pi_q : q}{\pi : p \lor q}\quad(\text{or-right})$$
+
+Where $\pi_p$ and $\pi_q$ is the proof of $p$ and $q$ respectively, and
+$\pi$ is the constructed proof of $p \lor q$.
+
+The elimination rule for \"or\" states that if we have a proof of
+$p \lor q$, and we have proofs of $r$ from the assumptions $p$ and $q$,
+then we can construct a proof of $r$.
+
+Notice that we get an interesting property from the or introduction
+rules, since the only way to prove $A \lor B$ is with a proof of $A$ or
+$B$ we have
+
+::: lemma
+Specifically if there exists a proof of $A \lor B$ with no assumptions ,
+it implies either there exists a proof of $A$, or there exists a proof
+of $B$ with no assumptions.
+:::
+
+At least without introducing further assumptions.
+
+::: definition
+If we have a proof of $p \lor q$, and we have proofs of $r$ from the
+assumptions $p$ and $q$, then we can construct a proof of $r$.
+:::
+
+This is often denoted as:
+$$\frac{\pi : p \lor q, \pi_{p} : p \Rightarrow r, \pi_{q} : q \Rightarrow r}{\pi_r : r}
+    \quad(\text{or-elim})$$
+
+Where $\pi$ is the proof of $p \lor q$, $\pi_p$ and $\pi_q$ are the
+proofs of $p$ implies $r$ and $q$ implies $r$ respectively, letting us
+conclude with a proof $\pi_r$ of $r$
+
+The elimination rule is a bit more complicated then its \"natural
+dual\", the and introduction rule, since we were able to sneakily assume
+part of the definition of and by using the \",\" operator in our initial
+part of and. This is mainly since we need those 2 operators \",\" and
+\"$\vdash$\", to bootstrap everything else. However once we have a more
+abstract way of formalizing these concepts (ie, category theory) all the
+beautiful dualities will return!
+
+## True and False
+
+The introduction rule for \"True\"/$\top$ is straightforward:
+
+::: definition
+We can always construct a proof of \"True\".
+:::
+
+This is often denoted as:
+
+$$\frac{}{\star : \top}\quad(\text{true-intro})$$
+
+::: lemma
+The trivially true proposition is true.
+:::
+
+::: proof
+*Proof.* Use the introduction rule for truth to generate a proof. ◻
+:::
+
+True ($\top$) has no elimination rule. This can be justified by duality
+by the fact that no information went into our proof of $\top$, so we
+cant eliminate it to get anything, since otherwise we could generate
+mathematical information from nothing.
+
+As for False it cannot have an introduction rule as we cannot construct
+a proof of \"False\" without contradicting ourselves. The elimination
+rule for \"False\" is more interesting:
+
+::: definition
+If we have a proof of \"False\", then we can construct a proof of any
+proposition $p$.
+:::
+
+This is often denoted as:
+$$\frac{\pi : \bot}{\pi_p : P}\quad(\text{false-elim})$$ Once can
+justify this a bit through the lens of conservation of information.
+Since there is no introduction rule for False (and since any proof of it
+would create a horrible inconsistency), we can safely use it to prove
+any proposition we wish. (This is known in philosophy as the principle
+of explosion.)
+
+Having the False proposition lets us define something interesting
+
+::: definition
+The proposition \"not p\" written as $\neg p$, is defined to be the
+proposition \"$p$ implies False\", or $p \implies \bot$. (Assuming some
+context $\Gamma$)
+:::
+
+This looks really spooky, but it is really just the classic definition
+of proof by contradiction. An example might be helpful
+
+::: example
+::: proof
+*Proof.* Our goal is to prove the statement \"$\sqrt{2}$ is not
+rational\", writing this on our system we would have
+$\neg (\sqrt{2}\text{ is not rational})$. Uing the definition of
+negation, we want to prove the statement
+$(\sqrt{2}\text{ is not rational}) \implies \text{False}$. Using the
+implication introduction rule, we can see we want to create a proof that
+assumes that $\sqrt{2}$ is rational and arrives at a false statement. So
+lettuce begin!
+
+Suppose, that $\sqrt{2}$ is rational. Then, there exist coprime integers
+$p$ and $q$ such that: $$\sqrt{2} = \frac{p}{q}$$ Squaring both sides,
+we get: $$2 = \frac{p^2}{q^2}$$ Multiplying both sides by $q^2$, we get:
+$$2q^2 = p^2$$ This implies that $p^2$ is even, and therefore $p$ is
+even. Let $p = 2r$ for some integer $r$. Then: $$2q^2 = (2r)^2 = 4r^2$$
+Dividing both sides by 2, we get: $$q^2 = 2r^2$$ This implies that $q^2$
+is even, and therefore $q$ is even. But this contradicts the assumption
+that $p$ and $q$ are coprime, giving us our proof of \"False\" (i.e., a
+contradiction). ◻
+:::
+
+(This is assuming approximately 20 pages worth of peano arithmetic and
+number theory, but for now its a good example.)
+:::
+
+::: definition
+A proposition $p$ is false in a context $\Gamma$ if their exists a proof
+taking in our assumptions $\Gamma$ and producing $\neg p$. $(\Gamma \l)$
+:::
+
+## Decideability and the Law of Excluded Middle
+
+::: definition
+A proposition $p$ is decidable if $p \lor \neg p$ is true.
+(Alternatively saying that $p$ is either true or false.)
+:::
+
+So far our logic is almost identical to the logic taught in a
+traditional logic class, however it is missing one very important piece.
+
+::: axiom
+Every proposition $p$ is decidable. (aka for every proposition $p$ then
+$p \lor \neg p$ is true.)
+:::
+
+With this axiom the logic we have created on our propositions is
+identical to that taught in conventional mathematics, with the added
+benefit of being able to track and verify our proofs!
+
+Its also a very powerful result that you need to prove a bunch of very
+important results (The intermediate value theorem, an injection from
+$A \hookrightarrow B$, and an injection from $B \hookrightarrow A$
+implies a bijection between $A$ and $B$, every function from the
+naturals to the naturals is computable, etc\...).
+
+Furthermore, even if we dont assume the law of excluded middle we have:
+
+::: theorem
+For any proposition $p$, there is no proof showing that $p$ is
+undecideable. (aka, there is no proof showing $\neg(p \lor \neg p)$)
+:::
+
+::: proof
+*Proof.* If we want to show that there is no proof of
+$\neg (p \lor \neg p)$, by the definition of negation, we should assume
+there does exist a proof of $\neg (p \lor \neg p)$ and strive for a
+contradiction.
+
+We can sketch a proof of this real quick, if $p$ was true, then $p$
+would be decideable, contradicting our assumption. However, this gives
+us a proof that $p$ is false, however if $p$ is false, then $p$ is also
+decideable, contradicting our assumption that it is not.
+
+That was a lot of words, lets try to break it down using our rules so
+far, if we know there exists a proof of $\neg (p \lor \neg p)$ and are
+trying to create a contradiction, it seems like we are at a dead end
+since we cant prove anything about $p$. What if we start with$\neg p$?
+By implication introduction we should start with assuming $p$ is true
+and try to prove something false. If $p$ is true, then we know
+$p \lor \neg p$ is true by the propetry of or introduction. From here we
+can use the property of modus ponens and the definition to show that
+plugging $p \lor \neg p$ into our proof of $\neg( p \lor \neg p)$ gives
+us $\bot$. Thus we have successfully proved $\neg p$.
+
+From here we can use our proof of $\neg p$ and or introduction to give
+us a proof of $p \lor \neg p$. We can again use modus ponens along with
+our proof of $\neg (p \lor \neg p)$, to create a contradiction. Thus
+showing our initial assumption that there exists a proof of
+$\neg (p \lor \neg p)$ was false. ◻
+:::
+
+An advantage of our entire proof framework is that we can take every
+single one of these steps in this proof and feed it to a computer, so we
+know our proof has no mistakes
+
+``` text
+theorem not_not_lem (p : Prop) : ¬ ¬ (p ∨ ¬ p) := by
+  -- Begin proof by assuming neg_lem : ¬(p or ¬p) and try to show False
+  intro neg_lem 
+  -- Prove not p by using or introduction along with our assumption.
+  have notp : p → False := fun p1 : p => neg_lem (Or.intro_left (¬p) p1)
+  -- Prove lem using not p
+  have pornotp : p ∨ ¬ p := Or.intro_right (p) notp
+  -- Derive a contradiction from neg_lem and lem.
+  exact neg_lem pornotp
+```
+
+This statement (plus some details in the homework) lets us conclude the
+following result,
+
+::: theorem
+Any proposition $\neg \neg P$ is provable from a set of axioms $\Gamma$
+$(\Gamma \vdash \neg \neg P)$ if and only if $P$ is provable from
+$\Gamma$ with the assumption that the law of excluded midddle holds.
+$(\Gamma, LEM \vdash P)$
+:::
+
+::: proof
+*Proof.* Use the following solutions to homework problems.
+
+1.  $(\neg \neg P) \land (\neg \neg Q) \iff  \neg \neg (P \land Q)$
+
+2.  $(\neg \neg P) \implies (\neg \neg Q) \iff  \neg \neg (P \implies Q)$
+
+3.  $P \lor \neg P \implies (P \iff \neg \neg P)$
+
+Then combine these principles, along with the theorem about the not not
+law of excluded middle. To go in both directions. (ALSO HOMEWORK) ◻
+:::
+
+::: definition
+A proposition $p$ is called \"classically true\" if there exists a proof
+of $\neg \neg p$. (Assuming some context $\Gamma$)
+:::
+
+This lets us know that if we do choose to not assume the law of the
+excluded middle, we dont actually loose out on any mathematical
+structure. All that structure is perfectly preserved in the behavior of
+doubly negated propositions.
+
+::: Exercise
+Let $P$ be a proposition. Then $P$ implies $\neg\neg P$.
+:::
+
+::: Answer
+We start by assuming $P$ and try to create a proof of $\neg\neg P$. To
+show that it will suffice to assume $\neg P$ be true and cause a
+contradiction. Then $\neg P$ is a proof that $P$ is false, but we have
+assumed $P$ is true. This is a contradiction, so our assumption that
+$\neg P$ is true must be false. Therefore, $\neg\neg P$ is true.
+:::
+
+::: Exercise
+Let $P$ be a proposition. If $P$ is decidable (i.e., either $P$ or
+$\neg P$ is true), then $P$ is stable (i.e., $P$ is equivalent to
+$\neg\neg P$).
+:::
+
+::: Answer
+Suppose $P$ is decidable, i.e., either $P$ or $\neg P$ is true. We need
+to show that $P$ is equivalent to $\neg\neg P$. First, suppose $P$ is
+true. Then $\neg\neg P$ is true by the previous exercise. Now, suppose
+$\neg\neg P$ is true. We have two cases:
+
+Case 1: $P$ is true. Then we are done.
+
+Case 2: $\neg P$ is true. But then this contradicts our assumption
+$\neg \neg P$. Therefore we can use the false elimination rule and
+conclude that $P$ must be true.
+
+In both cases, we have shown that $P$ is equivalent to $\neg\neg P$, so
+$P$ is stable.
+:::
+
+::: Exercise
+Let $P$ and $Q$ be propositions. If $P$ implies $Q$, then $\neg Q$
+implies $\neg P$.
+:::
+
+::: Answer
+Suppose $P$ implies $Q$. Let $\neg Q$ be true. We need to show that
+$\neg P$ is true. Suppose, for the sake of contradiction, that $P$ is
+true. Then, by our assumption, $Q$ is true. But this contradicts our
+assumption that $\neg Q$ is true. Therefore, our assumption that $P$ is
+true must be false, and we conclude that $\neg P$ is true.
+:::
+
+::: Exercise
+Let $P$ be a proposition. Then $\neg P$ is equivalent to
+$\neg\neg\neg P$.
+:::
+
+::: Answer
+We need to show that $\neg P$ implies $\neg\neg\neg P$ and vice versa.
+
+##### Forward Direction $\neg P \implies \neg\neg\neg P$
+
+##### Backward Direction $\neg\neg\neg P \implies \neg P$
+:::
+
+::: Exercise
+For any two propositions $P$ and $Q$, the following equivalence holds:
+$$(\neg P) \land (\neg Q) \iff \neg (P \lor Q)$$
+:::
+
+::: Answer
+::: proof
+*Proof.* We split this proof into 2 sections
+
+##### Forward Implication {#forward-implication .unnumbered}
+
+Suppose we have $(\neg P) \land (\neg Q)$. We need to show that
+$\neg (P \lor Q)$.
+
+Let's assume, for the sake of contradiction, that $P \lor Q$ holds.
+Then, by definition of \"or\", we have two cases:
+
+1.  $P$ holds. But then we have a contradiction, since we have $\neg P$
+    as the left part of our assumption $(\neg P) \land (\neg Q)$.
+
+2.  $Q$ holds. But then we have a contradiction, since we have $\neg Q$
+    as the right part of our assumption $(\neg P) \land (\neg Q)$.
+
+In both cases, we reach a contradiction, so our assumption that
+$P \lor Q$ holds must be false. Therefore, we have shown that
+$\neg (P \lor Q)$.
+
+##### Backward Implication {#backward-implication .unnumbered}
+
+Suppose we have $\neg (P \lor Q)$. We need to show that
+$(\neg P) \land (\neg Q)$.
+
+Let's assume $P$ holds. Then, by definition of \"or\", we have
+$P \lor Q$, which contradicts our assumption that $\neg (P \lor Q)$.
+Therefore, $P$ cannot hold, so we must have $\neg P$.
+
+Similarly, let's assume $Q$ holds. Then, by definition of \"or\", we
+have $P \lor Q$, which again contradicts our assumption that
+$\neg (P \lor Q)$. Therefore, $Q$ cannot hold, so we must have $\neg Q$.
+
+Since we have shown both $\neg P$ and $\neg Q$, we have established that
+$(\neg P) \land (\neg Q)$.
+
+This completes the proof of the equivalence. ◻
+:::
+:::
+
+::: Exercise
+Prove that $(\neg P) \vee (\neg Q) \Rightarrow \neg (P \wedge Q)$.
+:::
+
+::: Answer
+Since we are trying to prove a contradiction, let us assume we have a
+proof $h$ that either $P$ is false or $Q$ is false (i.e.,
+$(\neg P) \vee (\neg Q)$), and try to derive a proof of
+$\neg( P \wedge Q)$. To prove this we first assume we have a proof $pq$
+that both $P$ and $Q$ are true (i.e., $P \wedge Q$) and try to arrive at
+a contradiction. We can do this by doing a proof by cases on $h$.
+
+-   If $P$ is false (i.e., $\neg P$), then we can obtain a proof $p$
+    that $P$ is true from $pq$. But this contradicts our assumption that
+    $P$ is false, so we can conclude that our initial assumption (that
+    both $P$ and $Q$ are true) is false.
+
+-   If $Q$ is false (i.e., $\neg Q$), then we can obtain a proof $q$
+    that $Q$ is true from $pq$. But this contradicts our assumption that
+    $Q$ is false, so we can conclude that our initial assumption (that
+    both $P$ and $Q$ are true) is false.
+
+In either case, we have shown that if $(\neg P) \vee (\neg Q)$, then
+$\neg (P \wedge Q)$.
+:::
+
+[^1]: If one was being pedantic, for every single one of these
+    introduction and elimination rules should assume that the proof of
+    $p$ or $q$, exists using some system of axioms $\Gamma$. So you
+    would write the actual introduction and elimination rules like so
+    $$\frac{ \Gamma \vdash \pi_p : p, \Gamma \vdash \pi_q : q}{ \Gamma \vdash \pi: p \land q}$$
