@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>categories3</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#categories-iii-natural-transformations-and-2-categories"
+id="toc-categories-iii-natural-transformations-and-2-categories">Categories
+III: Natural Transformations and 2-Categories</a>
+<ul>
+<li><a href="#exercises" id="toc-exercises">Exercises</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="categories-iii-natural-transformations-and-2-categories">Categories
+III: Natural Transformations and 2-Categories</h1>
+<div class="info[definiton]">
+<p>A Natural transformation <span class="math inline">\(\mu\)</span>
+between two functors <span class="math inline">\(A \xrightarrow{F}
+B\)</span> and <span class="math inline">\(A \xrightarrow{G} B\)</span>,
+associates every object <span class="math inline">\(x \in A\)</span>
+with an arrow in <span class="math inline">\(B\)</span>, <span
+class="math inline">\(\mu_x\)</span> with the following domain and
+codomain <span class="math display">\[
+F(x) \xrightarrow{\mu_x} G(X)
+\]</span> such that for every arrow in <span class="math inline">\(x
+\xrightarrow{f} y \in A\)</span> then the <span
+class="math inline">\(\mu_y \circ F(f) = G(f) \circ \mu_x\)</span> or
+alternatively the following diagram commutes. <span
+class="math display">\[\begin{tikzcd}
+    {F(x)} &amp; {G(x)} \\
+    {F(y)} &amp; {G(y)}
+    \arrow[&quot;{F(f)}&quot;&#39;, from=1-1, to=2-1]
+    \arrow[&quot;{\mu_x}&quot;, from=1-1, to=1-2]
+    \arrow[&quot;{\mu_y}&quot;&#39;, from=2-1, to=2-2]
+    \arrow[&quot;{G(f)}&quot;, from=1-2, to=2-2]
+\end{tikzcd}\]</span></p>
+</div>
+<div class="info[definiton]">
+<p>A natural isomorphism is a natural transformation <span
+class="math inline">\(\mu\)</span> where every morphism <span
+class="math inline">\(\mu_x\)</span> is a bijection/isomorphism.</p>
+</div>
+<div class="info[definiton]">
+<p>Two categories are <span class="math inline">\(A\)</span> and <span
+class="math inline">\(B\)</span> are equivalent if there exist functors
+<span class="math inline">\(A \xrightarrow{F} B\)</span> and <span
+class="math inline">\(B \xrightarrow{G} A\)</span> such that there is a
+natural isomorphism between <span class="math inline">\(F \circ
+G\)</span> and <span class="math inline">\(A_{id}\)</span> as well as a
+natural isomorphism between <span class="math inline">\(G \circ
+F\)</span> and <span class="math inline">\(B_{id}\)</span>
+<!-- $$\begin{tikzcd}
+    & {\mathcal{A}} & {\mathcal{B}} \\
+    {\mathcal{B}} & {\mathcal{B}} & {\mathcal{A}} & {\mathcal{A}}
+    \arrow["F", curve={height=-6pt}, from=1-2, to=1-3]
+    \arrow["G", curve={height=-6pt}, from=1-3, to=1-2]
+    \arrow[""{name=0, anchor=center, inner sep=0}, "{G \circ F}", curve={height=-12pt}, from=2-3, to=2-4]
+    \arrow[""{name=1, anchor=center, inner sep=0}, "{id_\mathcal{A}}", curve={height=-12pt}, from=2-4, to=2-3]
+    \arrow[""{name=2, anchor=center, inner sep=0}, "{F \circ G}", curve={height=-12pt}, from=2-1, to=2-2]
+    \arrow[""{name=3, anchor=center, inner sep=0}, "{id_\mathcal{B}}", curve={height=-12pt}, from=2-2, to=2-1]
+    \arrow[shorten <=3pt, shorten >=3pt, Rightarrow, 2tail reversed, from=1, to=0]
+    \arrow[shorten <=3pt, shorten >=3pt, Rightarrow, 2tail reversed, from=3, to=2]
+\end{tikzcd}$$ --></p>
+</div>
+<div class="tip[theorem]">
+<p>All "categorical" constructions, any definition of a sets/object by
+only referencing their behavior with respect to functions/arrows, (aka
+no subsets, no inclusion, no equality on objects) respect equivalence of
+categories, the same way all operations in group theory respect
+isomorphism of groups and the like.</p>
+</div>
+<div class="info[definiton]">
+<p>For any two categories <span
+class="math inline">\(\mathcal{A},\mathcal{B}\)</span>, we define the
+category <span class="math inline">\(\mathcal{B}^\mathcal{A}\)</span> to
+be the category of functors from <span
+class="math inline">\(\mathcal{A}\)</span> to <span
+class="math inline">\(\mathcal{B}\)</span>, where</p>
+<ul>
+<li><p>Objects are functors from <span
+class="math inline">\(\mathcal{A}\)</span> to <span
+class="math inline">\(\mathcal{B}\)</span></p></li>
+<li><p>Arrows from objects <span class="math inline">\(F\)</span> to
+<span class="math inline">\(G\)</span> are natural transformations from
+a functor <span class="math inline">\(F\)</span> to a functor <span
+class="math inline">\(G\)</span></p></li>
+</ul>
+<p>We define</p>
+<ul>
+<li><p>For any functor <span class="math inline">\(F\)</span> we define
+the natural transformation</p>
+<p><span class="math inline">\(F \xRightarrow{id_F} F\)</span></p>
+<p>to be the natural transformation associating every object <span
+class="math inline">\(x \in \mathcal{A}\)</span> with the arrow in <span
+class="math inline">\(\mathcal{B}\)</span> $$</p>
+<span class="math display">\[\begin{aligned}
+            F(x) \xrightarrow[]{id_{F(x)}} F(x)
+
+\end{aligned}\]</span>
+<p>$$</p></li>
+<li><p>Given three functors <span class="math inline">\(F,G,H\)</span>
+between <span class="math inline">\(\mathcal{A}\)</span> and <span
+class="math inline">\(\mathcal{B}\)</span>, and natural transformations
+<span class="math inline">\(F \xRightarrow{\alpha} G\)</span> and <span
+class="math inline">\(G \xRightarrow{\beta} H\)</span>. The natural
+transformation <span class="math inline">\(\beta \circ \alpha\)</span>
+associates every <span class="math inline">\(x \in \mathcal{A}\)</span>
+with the arrow in <span class="math inline">\(\mathcal{B}\)</span> given
+by: <span class="math display">\[\begin{tikzcd}
+    {F(x)} &amp; {G(x)} &amp; {H(x)}
+    \arrow[&quot;{\alpha_x}&quot;, from=1-1, to=1-2]
+    \arrow[&quot;{\beta_x}&quot;, from=1-2, to=1-3]
+    \arrow[&quot;{(\beta \circ \alpha)_x=\beta_x \circ
+\alpha_x}&quot;&#39;, curve={height=12pt}, from=1-1, to=1-3]
+\end{tikzcd}\]</span></p></li>
+</ul>
+<p>Proofs that the definitions for identity and composition exist as
+natural transformations and satisfy the rules of a category are in the
+exercise solutions.</p>
+</div>
+<p> </p>
+<div class="info[definiton]">
+<p>A 2-Category <span class="math inline">\(C\)</span> consists of a
+collection of objects, a collection of 1-morphisms <span
+class="math inline">\(Hom_C(a,b)\)</span> for every ordered pair of
+objects <span class="math inline">\(a,b \in \mathcal{O}\)</span>. And a
+collection <span class="math inline">\(Hom2(f,g)\)</span> for every
+ordered pair of arrows <span class="math inline">\(f,g \in
+Hom_C(a,b)\)</span></p>
+<ol type="1">
+<li><p>For every object <span class="math inline">\(a\)</span> there
+exists a 1-morphism <span class="math inline">\(id_a \in
+Hom(a,a)\)</span></p></li>
+<li><p>For any 1-morphism <span class="math inline">\(f \in
+Hom(a,b)\)</span> and <span class="math inline">\(g \in
+Hom(b,c)\)</span>, there exists an arrow <span class="math inline">\(g
+\circ f \in Hom(a,c)\)</span></p></li>
+</ol>
+<p>These 1-morphisms must satisfy the same identity and associativity
+properties as a regular category, now for the 2 morphisms</p>
+<ol type="1">
+<li><p>For every 1-morphism <span class="math inline">\(f \in
+Hom(a,b)\)</span>, there exists a 2-morphism <span
+class="math inline">\(id_f \in Hom2(f,f)\)</span></p></li>
+<li><p>For every three 1 morphisms <span class="math inline">\(f,g,h \in
+Hom(a,b)\)</span> if there are 2-morphisms <span
+class="math inline">\(\alpha \in Hom2(f,g)\)</span> and <span
+class="math inline">\(\beta \in Hom2(g,h)\)</span>, then there exists a
+2-morphism <span class="math inline">\(\beta \circ \alpha \in
+Hom2(f,h)\)</span>.</p></li>
+</ol>
+<p>And these 2-morphisms must also satisfy the same identity and
+associativity properties as a regular category.</p>
+</div>
+<p>Another way of formalizing a 2-category is a regular category where
+your HomSets are replaced with HomCategories. Using this we can finally
+define the category of categories</p>
+<div class="info[definiton]">
+<p>The 2-Category <span class="math inline">\(Cat\)</span> is the
+category where</p>
+<ul>
+<li><p>The objects of <span class="math inline">\(Cat\)</span> are small
+categories (ie, categories with only a set of morphisms, to avoid
+problems with Russel’s Paradox.)</p></li>
+<li><p>The 1-morphisms are Functors between categories.</p></li>
+<li><p>The 2-morphisms are natural transformations between
+functors.</p></li>
+</ul>
+</div>
+<h3 id="exercises">Exercises</h3>
+<div class="note[Exercise]">
+<p>Suppose <span class="math inline">\(\alpha: F \Rightarrow G\)</span>
+is a natural isomorphism. Show that the inverses of the component
+morphisms define the components of a natural isomorphism <span
+class="math inline">\(\alpha^{-1}: G \Rightarrow F\)</span>.</p>
+</div>
+<div class="note[Exercise]">
+<p>Prove that for any category <span
+class="math inline">\(\mathcal{A}\)</span> that <span
+class="math inline">\(\mathcal{A}\)</span> is equivalent to <span
+class="math inline">\(sk(\mathcal{A})\)</span></p>
+</div>
+<div class="warning[Answer]">
+
+</div>
+<div class="note[Exercise]">
+<p>Show that for any 2 skeletal categories <span
+class="math inline">\(A\)</span> and <span
+class="math inline">\(B\)</span>, then an equivalence between <span
+class="math inline">\(A\)</span> and <span
+class="math inline">\(B\)</span> forms an isomorphism from <span
+class="math inline">\(A\)</span> to <span
+class="math inline">\(B\)</span></p>
+</div>
+<div class="warning[Answer]">
+
+</div>
+<div class="note[Exercise]">
+<p>Show that for any functor <span class="math inline">\(\mathcal{A}
+\xrightarrow[]{F} \mathcal{B}\)</span> that the identity natural
+transformation defined in Definition <a href="#def:funccat"
+data-reference-type="ref" data-reference="def:funccat">[def:funccat]</a>
+is actually a natural transformation that satisfies: <span
+class="math display">\[\begin{tikzcd}
+    {F(x)} &amp; {F(x)} \\
+    {F(y)} &amp; {F(y)}
+    \arrow[&quot;{F(f)}&quot;&#39;, from=1-1, to=2-1]
+    \arrow[&quot;{\mu_x}&quot;, from=1-1, to=1-2]
+    \arrow[&quot;{\mu_y}&quot;&#39;, from=2-1, to=2-2]
+    \arrow[&quot;{F(f)}&quot;, from=1-2, to=2-2]
+\end{tikzcd}\]</span></p>
+</div>
+<div class="note[Exercise]">
+<p>Show that for any functors <span class="math inline">\(\mathcal{A}
+\xrightarrow[]{F,G,H} \mathcal{B}\)</span>, and natural transformations
+<span class="math inline">\(F \xRightarrow{\alpha} G\)</span> and <span
+class="math inline">\(G \xRightarrow{\beta}H\)</span> that the
+composition natural transformation <span class="math inline">\(\beta
+\circ \alpha\)</span> defined in Definition <a href="#def:funccat"
+data-reference-type="ref" data-reference="def:funccat">[def:funccat]</a>
+is actually a natural transformation that satisfies: <span
+class="math display">\[\begin{tikzcd}
+    {F(x)} &amp; {F(x)} \\
+    {H(y)} &amp; {H(y)}
+    \arrow[&quot;{F(f)}&quot;&#39;, from=1-1, to=2-1]
+    \arrow[&quot;{\mu_x}&quot;, from=1-1, to=1-2]
+    \arrow[&quot;{\mu_y}&quot;&#39;, from=2-1, to=2-2]
+    \arrow[&quot;{H(f)}&quot;, from=1-2, to=2-2]
+\end{tikzcd}\]</span></p>
+</div>
+<div class="note[Exercise]">
+<p>Show the category of finite sets <span
+class="math inline">\(FinSet\)</span> and the category of hereditary
+finite sets <span class="math inline">\(V_\omega\)</span> are equivalent
+as categories.</p>
+</div>
+<div class="warning[Answer]">
+We can prove this by showing that there are 2 functors <span
+class="math inline">\(Y\)</span> and <span
+class="math inline">\(Y&#39;\)</span>, and a natural isomorphism between
+<span class="math inline">\(Y&#39;\circ Y \cong FinSet_{id}\)</span> and
+<span class="math inline">\(Y \circ Y&#39; \cong
+(V_\omega)_{id}\)</span> Since every finite set <span
+class="math inline">\(a\)</span> has a bijection between it and a
+natural number <span class="math inline">\(|a|\)</span> like so <span
+class="math display">\[\begin{tikzcd}
+        a &amp; {|a|}
+        \arrow[&quot;{a_*}&quot;, curve={height=-6pt}, tail, two heads,
+from=1-1, to=1-2]
+        \arrow[&quot;{a_*^{-1}}&quot;, curve={height=-6pt}, tail, two
+heads, from=1-2, to=1-1]
+    \end{tikzcd}\]</span> We can then say our functor <span
+class="math inline">\(Y(a)= |a|\)</span> and for a function <span
+class="math inline">\(a \rightarrow{f} b\)</span> then <span
+class="math inline">\(Y(f)\)</span> can be defined as $$
+<span class="math display">\[\begin{gathered}
+        |a| \xrightarrow{a_*^{-1}} a \xrightarrow{f} b \xrightarrow{b_*}
+|b|\\
+        Y(f) = b_* \circ f \circ a_*^{-1}
+    
+\end{gathered}\]</span>
+<span class="math display">\[ And we can see that it respects
+composition
+\]</span>
+<span class="math display">\[\begin{aligned}
+        Y(g) \circ Y(f) &amp;= c_* \circ g \circ b_*^{-1} \circ b_*
+\circ f \circ a_*^{-1}\\
+        &amp;= c_* \circ g \circ  f \circ a_*^{-1}\\
+        &amp;= Y(g \circ f)
+    
+\end{aligned}\]</span>
+<p>$$ We define <span class="math inline">\(Y&#39;\)</span> using the
+exact same construction since every hereditary finite set is also a set,
+we can associate it with a natural number all the same. We also know
+that if <span class="math inline">\(a\)</span> is in the natural numbers
+then <span class="math inline">\(a_*\)</span> the identitfy function on
+<span class="math inline">\(a\)</span> namely <span
+class="math inline">\(a_{id}\)</span>. Notice that since if <span
+class="math inline">\(|a|\)</span> is a natural number then, <span
+class="math inline">\(Y(|a|)=|a|\)</span> and if we apply <span
+class="math inline">\(F\)</span> to a function <span
+class="math inline">\(|a| \xrightarrow{g}|b|\)</span> then <span
+class="math inline">\(Y(g)= b_{id} \circ g \circ a_{id}^{-1}=g\)</span>,
+the same goes for <span class="math inline">\(Y&#39;\)</span> applied to
+any natural number <span class="math inline">\(|a|\)</span> or function
+between them <span class="math inline">\(g\)</span>.</p>
+We can now create the natural isomorphism between <span
+class="math inline">\(Y&#39;\circ Y \cong FinSet_{id}\)</span>. Luckily
+we already have a candidate at the ready, where we can associate every
+element <span class="math inline">\(a\)</span> with a morphism <span
+class="math inline">\(a_*\)</span>. We now must verify the commutative
+square saying that <span class="math display">\[\begin{tikzcd}
+        {a} &amp; {|a|} \\
+        {b} &amp; {|b|}
+        \arrow[&quot;{f}&quot;&#39;, from=1-1, to=2-1]
+        \arrow[&quot;{a_*}&quot;, from=1-1, to=1-2]
+        \arrow[&quot;{b_*}&quot;&#39;, from=2-1, to=2-2]
+        \arrow[&quot;{F&#39;(F(f))}&quot;, from=1-2, to=2-2]
+    \end{tikzcd}\]</span> Alternatively prove that <span
+class="math inline">\(b_* \circ f = F&#39;(F(f)) \circ  a_*\)</span>.
+Using that <span class="math inline">\(F&#39;(F(f))= b_* \circ f \circ
+a_*^{-1}\)</span>, and we can conclude the proof like so $$
+<span class="math display">\[\begin{aligned}
+        F&#39;(F(f)) \circ  a_* &amp;= b_* \circ f \circ a_*^{-1} \circ
+a_*\\
+        &amp;= b_* \circ f
+    
+\end{aligned}\]</span>
+<p>$$ Thus <span class="math inline">\(Y&#39;\circ Y \cong
+FinSet_{id}\)</span>. Showing that <span class="math inline">\(Y \circ
+Y&#39; \cong (V_\omega)_{id}\)</span> follows the exact same logic just
+recasting everything in the domain of hereditary finite sets.</p>
+</div>
+</body>
+</html>

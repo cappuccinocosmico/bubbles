@@ -58,7 +58,7 @@ isomorphism of groups and the like.
 :::
 
 :::info[definiton]
-[]{#def:funccat label="def:funccat"} For any two categories
+For any two categories
 $\mathcal{A},\mathcal{B}$, we define the category
 $\mathcal{B}^\mathcal{A}$ to be the category of functors from
 $\mathcal{A}$ to $\mathcal{B}$, where
@@ -71,7 +71,10 @@ $\mathcal{A}$ to $\mathcal{B}$, where
 We define
 
 -   For any functor $F$ we define the natural transformation
-    $F \xRightarrow{id_F} F$ to be the natural transformation
+    
+    $F \xRightarrow{id_F} F$ 
+
+    to be the natural transformation
     associating every object $x \in \mathcal{A}$ with the arrow in
     $\mathcal{B}$ $$\begin{aligned}
                 F(x) \xrightarrow[]{id_{F(x)}} F(x)
