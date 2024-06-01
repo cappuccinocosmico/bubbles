@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbubbles=self.webpackChunkbubbles||[]).push([[903],{1912:b=>{b.exports=JSON.parse('{"blogBasePath":"/blog","blogTitle":"Blog"}')}}]);
