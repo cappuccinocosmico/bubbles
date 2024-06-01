@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>categories3</title>
+  <title>Categories III: Natural Transformations and 2-Categories</title>
   <style>
     html {
       color: #1a1a1a;
@@ -172,19 +172,15 @@
   type="text/javascript"></script>
 </head>
 <body>
+<header id="title-block-header">
+<h1 class="title">Categories III: Natural Transformations and
+2-Categories</h1>
+</header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#categories-iii-natural-transformations-and-2-categories"
-id="toc-categories-iii-natural-transformations-and-2-categories">Categories
-III: Natural Transformations and 2-Categories</a>
-<ul>
 <li><a href="#exercises" id="toc-exercises">Exercises</a></li>
-</ul></li>
 </ul>
 </nav>
-<h1
-id="categories-iii-natural-transformations-and-2-categories">Categories
-III: Natural Transformations and 2-Categories</h1>
 <div class="info[definiton]">
 <p>A Natural transformation <span class="math inline">\(\mu\)</span>
 between two functors <span class="math inline">\(A \xrightarrow{F}
@@ -197,15 +193,14 @@ F(x) \xrightarrow{\mu_x} G(X)
 \]</span> such that for every arrow in <span class="math inline">\(x
 \xrightarrow{f} y \in A\)</span> then the <span
 class="math inline">\(\mu_y \circ F(f) = G(f) \circ \mu_x\)</span> or
-alternatively the following diagram commutes. <span
-class="math display">\[\begin{tikzcd}
-    {F(x)} &amp; {G(x)} \\
-    {F(y)} &amp; {G(y)}
-    \arrow[&quot;{F(f)}&quot;&#39;, from=1-1, to=2-1]
-    \arrow[&quot;{\mu_x}&quot;, from=1-1, to=1-2]
-    \arrow[&quot;{\mu_y}&quot;&#39;, from=2-1, to=2-2]
-    \arrow[&quot;{G(f)}&quot;, from=1-2, to=2-2]
-\end{tikzcd}\]</span></p>
+alternatively the following diagram commutes. <!-- $$\begin{tikzcd}
+    {F(x)} & {G(x)} \\
+    {F(y)} & {G(y)}
+    \arrow["{F(f)}"', from=1-1, to=2-1]
+    \arrow["{\mu_x}", from=1-1, to=1-2]
+    \arrow["{\mu_y}"', from=2-1, to=2-2]
+    \arrow["{G(f)}", from=1-2, to=2-2]
+\end{tikzcd}$$ --></p>
 </div>
 <div class="info[definiton]">
 <p>A natural isomorphism is a natural transformation <span
@@ -278,13 +273,12 @@ class="math inline">\(G \xRightarrow{\beta} H\)</span>. The natural
 transformation <span class="math inline">\(\beta \circ \alpha\)</span>
 associates every <span class="math inline">\(x \in \mathcal{A}\)</span>
 with the arrow in <span class="math inline">\(\mathcal{B}\)</span> given
-by: <span class="math display">\[\begin{tikzcd}
-    {F(x)} &amp; {G(x)} &amp; {H(x)}
-    \arrow[&quot;{\alpha_x}&quot;, from=1-1, to=1-2]
-    \arrow[&quot;{\beta_x}&quot;, from=1-2, to=1-3]
-    \arrow[&quot;{(\beta \circ \alpha)_x=\beta_x \circ
-\alpha_x}&quot;&#39;, curve={height=12pt}, from=1-1, to=1-3]
-\end{tikzcd}\]</span></p></li>
+by: <!-- $$\begin{tikzcd}
+        {F(x)} & {G(x)} & {H(x)}
+        \arrow["{\alpha_x}", from=1-1, to=1-2]
+        \arrow["{\beta_x}", from=1-2, to=1-3]
+        \arrow["{(\beta \circ \alpha)_x=\beta_x \circ \alpha_x}"', curve={height=12pt}, from=1-1, to=1-3]
+    \end{tikzcd}$$ --></p></li>
 </ul>
 <p>Proofs that the definitions for identity and composition exist as
 natural transformations and satisfy the rules of a category are in the
@@ -340,148 +334,117 @@ functors.</p></li>
 </ul>
 </div>
 <h3 id="exercises">Exercises</h3>
-<div class="note[Exercise]">
-<p>Suppose <span class="math inline">\(\alpha: F \Rightarrow G\)</span>
-is a natural isomorphism. Show that the inverses of the component
-morphisms define the components of a natural isomorphism <span
-class="math inline">\(\alpha^{-1}: G \Rightarrow F\)</span>.</p>
-</div>
-<div class="note[Exercise]">
-<p>Prove that for any category <span
-class="math inline">\(\mathcal{A}\)</span> that <span
-class="math inline">\(\mathcal{A}\)</span> is equivalent to <span
-class="math inline">\(sk(\mathcal{A})\)</span></p>
-</div>
-<div class="warning[Answer]">
+<!-- 
+:::note[Exercise]
+Suppose $\alpha: F \Rightarrow G$ is a natural isomorphism. Show that
+the inverses of the component morphisms define the components of a
+natural isomorphism $\alpha^{-1}: G \Rightarrow F$.
+:::
 
-</div>
-<div class="note[Exercise]">
-<p>Show that for any 2 skeletal categories <span
-class="math inline">\(A\)</span> and <span
-class="math inline">\(B\)</span>, then an equivalence between <span
-class="math inline">\(A\)</span> and <span
-class="math inline">\(B\)</span> forms an isomorphism from <span
-class="math inline">\(A\)</span> to <span
-class="math inline">\(B\)</span></p>
-</div>
-<div class="warning[Answer]">
+:::note[Exercise]
+Prove that for any category $\mathcal{A}$ that $\mathcal{A}$ is
+equivalent to $sk(\mathcal{A})$
+:::
 
-</div>
-<div class="note[Exercise]">
-<p>Show that for any functor <span class="math inline">\(\mathcal{A}
-\xrightarrow[]{F} \mathcal{B}\)</span> that the identity natural
-transformation defined in Definition <a href="#def:funccat"
-data-reference-type="ref" data-reference="def:funccat">[def:funccat]</a>
-is actually a natural transformation that satisfies: <span
-class="math display">\[\begin{tikzcd}
-    {F(x)} &amp; {F(x)} \\
-    {F(y)} &amp; {F(y)}
-    \arrow[&quot;{F(f)}&quot;&#39;, from=1-1, to=2-1]
-    \arrow[&quot;{\mu_x}&quot;, from=1-1, to=1-2]
-    \arrow[&quot;{\mu_y}&quot;&#39;, from=2-1, to=2-2]
-    \arrow[&quot;{F(f)}&quot;, from=1-2, to=2-2]
-\end{tikzcd}\]</span></p>
-</div>
-<div class="note[Exercise]">
-<p>Show that for any functors <span class="math inline">\(\mathcal{A}
-\xrightarrow[]{F,G,H} \mathcal{B}\)</span>, and natural transformations
-<span class="math inline">\(F \xRightarrow{\alpha} G\)</span> and <span
-class="math inline">\(G \xRightarrow{\beta}H\)</span> that the
-composition natural transformation <span class="math inline">\(\beta
-\circ \alpha\)</span> defined in Definition <a href="#def:funccat"
-data-reference-type="ref" data-reference="def:funccat">[def:funccat]</a>
-is actually a natural transformation that satisfies: <span
-class="math display">\[\begin{tikzcd}
-    {F(x)} &amp; {F(x)} \\
-    {H(y)} &amp; {H(y)}
-    \arrow[&quot;{F(f)}&quot;&#39;, from=1-1, to=2-1]
-    \arrow[&quot;{\mu_x}&quot;, from=1-1, to=1-2]
-    \arrow[&quot;{\mu_y}&quot;&#39;, from=2-1, to=2-2]
-    \arrow[&quot;{H(f)}&quot;, from=1-2, to=2-2]
-\end{tikzcd}\]</span></p>
-</div>
-<div class="note[Exercise]">
-<p>Show the category of finite sets <span
-class="math inline">\(FinSet\)</span> and the category of hereditary
-finite sets <span class="math inline">\(V_\omega\)</span> are equivalent
-as categories.</p>
-</div>
-<div class="warning[Answer]">
-We can prove this by showing that there are 2 functors <span
-class="math inline">\(Y\)</span> and <span
-class="math inline">\(Y&#39;\)</span>, and a natural isomorphism between
-<span class="math inline">\(Y&#39;\circ Y \cong FinSet_{id}\)</span> and
-<span class="math inline">\(Y \circ Y&#39; \cong
-(V_\omega)_{id}\)</span> Since every finite set <span
-class="math inline">\(a\)</span> has a bijection between it and a
-natural number <span class="math inline">\(|a|\)</span> like so <span
-class="math display">\[\begin{tikzcd}
-        a &amp; {|a|}
-        \arrow[&quot;{a_*}&quot;, curve={height=-6pt}, tail, two heads,
-from=1-1, to=1-2]
-        \arrow[&quot;{a_*^{-1}}&quot;, curve={height=-6pt}, tail, two
-heads, from=1-2, to=1-1]
-    \end{tikzcd}\]</span> We can then say our functor <span
-class="math inline">\(Y(a)= |a|\)</span> and for a function <span
-class="math inline">\(a \rightarrow{f} b\)</span> then <span
-class="math inline">\(Y(f)\)</span> can be defined as $$
-<span class="math display">\[\begin{gathered}
-        |a| \xrightarrow{a_*^{-1}} a \xrightarrow{f} b \xrightarrow{b_*}
-|b|\\
+:::warning[Answer]
+:::
+
+:::note[Exercise]
+Show that for any 2 skeletal categories $A$ and $B$, then an equivalence
+between $A$ and $B$ forms an isomorphism from $A$ to $B$
+:::
+
+:::warning[Answer]
+:::
+
+:::note[Exercise]
+Show that for any functor $\mathcal{A} \xrightarrow[]{F} \mathcal{B}$
+that the identity natural transformation defined in Definition
+[\[def:funccat\]](#def:funccat){reference-type="ref"
+reference="def:funccat"} is actually a natural transformation that
+satisfies: $$\begin{tikzcd}
+    {F(x)} & {F(x)} \\
+    {F(y)} & {F(y)}
+    \arrow["{F(f)}"', from=1-1, to=2-1]
+    \arrow["{\mu_x}", from=1-1, to=1-2]
+    \arrow["{\mu_y}"', from=2-1, to=2-2]
+    \arrow["{F(f)}", from=1-2, to=2-2]
+\end{tikzcd}$$
+:::
+
+:::note[Exercise]
+Show that for any functors
+$\mathcal{A} \xrightarrow[]{F,G,H} \mathcal{B}$, and natural
+transformations $F \xRightarrow{\alpha} G$ and $G \xRightarrow{\beta}H$
+that the composition natural transformation $\beta \circ \alpha$ defined
+in Definition [\[def:funccat\]](#def:funccat){reference-type="ref"
+reference="def:funccat"} is actually a natural transformation that
+satisfies: 
+$$\begin{tikzcd}
+    {F(x)} & {F(x)} \\
+    {H(y)} & {H(y)}
+    \arrow["{F(f)}"', from=1-1, to=2-1]
+    \arrow["{\mu_x}", from=1-1, to=1-2]
+    \arrow["{\mu_y}"', from=2-1, to=2-2]
+    \arrow["{H(f)}", from=1-2, to=2-2]
+\end{tikzcd}$$
+:::
+
+:::note[Exercise]
+Show the category of finite sets $FinSet$ and the category of hereditary
+finite sets $V_\omega$ are equivalent as categories.
+:::
+
+:::warning[Answer]
+We can prove this by showing that there are 2 functors $Y$ and $Y'$, and
+a natural isomorphism between $Y'\circ Y \cong FinSet_{id}$ and
+$Y \circ Y' \cong (V_\omega)_{id}$ Since every finite set $a$ has a
+bijection between it and a natural number $|a|$ like so $$\begin{tikzcd}
+        a & {|a|}
+        \arrow["{a_*}", curve={height=-6pt}, tail, two heads, from=1-1, to=1-2]
+        \arrow["{a_*^{-1}}", curve={height=-6pt}, tail, two heads, from=1-2, to=1-1]
+    \end{tikzcd}$$ We can then say our functor $Y(a)= |a|$ and for a
+function $a \rightarrow{f} b$ then $Y(f)$ can be defined as
+$$\begin{gathered}
+        |a| \xrightarrow{a_*^{-1}} a \xrightarrow{f} b \xrightarrow{b_*} |b|\\
         Y(f) = b_* \circ f \circ a_*^{-1}
     
-\end{gathered}\]</span>
-<span class="math display">\[ And we can see that it respects
-composition
-\]</span>
-<span class="math display">\[\begin{aligned}
-        Y(g) \circ Y(f) &amp;= c_* \circ g \circ b_*^{-1} \circ b_*
-\circ f \circ a_*^{-1}\\
-        &amp;= c_* \circ g \circ  f \circ a_*^{-1}\\
-        &amp;= Y(g \circ f)
+\end{gathered}$$ And we can see that it respects composition
+$$\begin{aligned}
+        Y(g) \circ Y(f) &= c_* \circ g \circ b_*^{-1} \circ b_* \circ f \circ a_*^{-1}\\
+        &= c_* \circ g \circ  f \circ a_*^{-1}\\
+        &= Y(g \circ f)
     
-\end{aligned}\]</span>
-<p>$$ We define <span class="math inline">\(Y&#39;\)</span> using the
-exact same construction since every hereditary finite set is also a set,
-we can associate it with a natural number all the same. We also know
-that if <span class="math inline">\(a\)</span> is in the natural numbers
-then <span class="math inline">\(a_*\)</span> the identitfy function on
-<span class="math inline">\(a\)</span> namely <span
-class="math inline">\(a_{id}\)</span>. Notice that since if <span
-class="math inline">\(|a|\)</span> is a natural number then, <span
-class="math inline">\(Y(|a|)=|a|\)</span> and if we apply <span
-class="math inline">\(F\)</span> to a function <span
-class="math inline">\(|a| \xrightarrow{g}|b|\)</span> then <span
-class="math inline">\(Y(g)= b_{id} \circ g \circ a_{id}^{-1}=g\)</span>,
-the same goes for <span class="math inline">\(Y&#39;\)</span> applied to
-any natural number <span class="math inline">\(|a|\)</span> or function
-between them <span class="math inline">\(g\)</span>.</p>
-We can now create the natural isomorphism between <span
-class="math inline">\(Y&#39;\circ Y \cong FinSet_{id}\)</span>. Luckily
-we already have a candidate at the ready, where we can associate every
-element <span class="math inline">\(a\)</span> with a morphism <span
-class="math inline">\(a_*\)</span>. We now must verify the commutative
-square saying that <span class="math display">\[\begin{tikzcd}
-        {a} &amp; {|a|} \\
-        {b} &amp; {|b|}
-        \arrow[&quot;{f}&quot;&#39;, from=1-1, to=2-1]
-        \arrow[&quot;{a_*}&quot;, from=1-1, to=1-2]
-        \arrow[&quot;{b_*}&quot;&#39;, from=2-1, to=2-2]
-        \arrow[&quot;{F&#39;(F(f))}&quot;, from=1-2, to=2-2]
-    \end{tikzcd}\]</span> Alternatively prove that <span
-class="math inline">\(b_* \circ f = F&#39;(F(f)) \circ  a_*\)</span>.
-Using that <span class="math inline">\(F&#39;(F(f))= b_* \circ f \circ
-a_*^{-1}\)</span>, and we can conclude the proof like so $$
-<span class="math display">\[\begin{aligned}
-        F&#39;(F(f)) \circ  a_* &amp;= b_* \circ f \circ a_*^{-1} \circ
-a_*\\
-        &amp;= b_* \circ f
+\end{aligned}$$ We define $Y'$ using the exact same construction since
+every hereditary finite set is also a set, we can associate it with a
+natural number all the same. We also know that if $a$ is in the natural
+numbers then $a_*$ the identitfy function on $a$ namely $a_{id}$. Notice
+that since if $|a|$ is a natural number then, $Y(|a|)=|a|$ and if we
+apply $F$ to a function $|a| \xrightarrow{g}|b|$ then
+$Y(g)= b_{id} \circ g \circ a_{id}^{-1}=g$, the same goes for $Y'$
+applied to any natural number $|a|$ or function between them $g$.
+
+We can now create the natural isomorphism between
+$Y'\circ Y \cong FinSet_{id}$. Luckily we already have a candidate at
+the ready, where we can associate every element $a$ with a morphism
+$a_*$. We now must verify the commutative square saying that
+$$\begin{tikzcd}
+        {a} & {|a|} \\
+        {b} & {|b|}
+        \arrow["{f}"', from=1-1, to=2-1]
+        \arrow["{a_*}", from=1-1, to=1-2]
+        \arrow["{b_*}"', from=2-1, to=2-2]
+        \arrow["{F'(F(f))}", from=1-2, to=2-2]
+    \end{tikzcd}$$ Alternatively prove that
+$b_* \circ f = F'(F(f)) \circ  a_*$. Using that
+$F'(F(f))= b_* \circ f \circ a_*^{-1}$, and we can conclude the proof
+like so $$\begin{aligned}
+        F'(F(f)) \circ  a_* &= b_* \circ f \circ a_*^{-1} \circ a_*\\
+        &= b_* \circ f 
     
-\end{aligned}\]</span>
-<p>$$ Thus <span class="math inline">\(Y&#39;\circ Y \cong
-FinSet_{id}\)</span>. Showing that <span class="math inline">\(Y \circ
-Y&#39; \cong (V_\omega)_{id}\)</span> follows the exact same logic just
-recasting everything in the domain of hereditary finite sets.</p>
-</div>
+\end{aligned}$$ Thus $Y'\circ Y \cong FinSet_{id}$. Showing that
+$Y \circ Y' \cong (V_\omega)_{id}$ follows the exact same logic just
+recasting everything in the domain of hereditary finite sets.
+::: -->
 </body>
 </html>

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
+title: "Categories III: Natural Transformations and 2-Categories"
 ---
-# Categories III: Natural Transformations and 2-Categories
 
 :::info[definiton]
 A Natural transformation $\mu$ between two functors
@@ -15,14 +15,14 @@ such that for every arrow in
 $x \xrightarrow{f} y \in A$ then the
 $\mu_y \circ F(f) = G(f) \circ \mu_x$ or alternatively the following
 diagram commutes. 
-$$\begin{tikzcd}
+<!-- $$\begin{tikzcd}
     {F(x)} & {G(x)} \\
     {F(y)} & {G(y)}
     \arrow["{F(f)}"', from=1-1, to=2-1]
     \arrow["{\mu_x}", from=1-1, to=1-2]
     \arrow["{\mu_y}"', from=2-1, to=2-2]
     \arrow["{G(f)}", from=1-2, to=2-2]
-\end{tikzcd}$$
+\end{tikzcd}$$ -->
 :::
 
 :::info[definiton]
@@ -86,12 +86,12 @@ We define
     $F \xRightarrow{\alpha} G$ and $G \xRightarrow{\beta} H$. The
     natural transformation $\beta \circ \alpha$ associates every
     $x \in \mathcal{A}$ with the arrow in $\mathcal{B}$ given by:
-    $$\begin{tikzcd}
+    <!-- $$\begin{tikzcd}
         {F(x)} & {G(x)} & {H(x)}
         \arrow["{\alpha_x}", from=1-1, to=1-2]
         \arrow["{\beta_x}", from=1-2, to=1-3]
         \arrow["{(\beta \circ \alpha)_x=\beta_x \circ \alpha_x}"', curve={height=12pt}, from=1-1, to=1-3]
-    \end{tikzcd}$$
+    \end{tikzcd}$$ -->
 
 Proofs that the definitions for identity and composition exist as
 natural transformations and satisfy the rules of a category are in the
@@ -141,7 +141,7 @@ The 2-Category $Cat$ is the category where
 :::
 
 ### Exercises
-
+<!-- 
 :::note[Exercise]
 Suppose $\alpha: F \Rightarrow G$ is a natural isomorphism. Show that
 the inverses of the component morphisms define the components of a
@@ -252,4 +252,4 @@ like so $$\begin{aligned}
 \end{aligned}$$ Thus $Y'\circ Y \cong FinSet_{id}$. Showing that
 $Y \circ Y' \cong (V_\omega)_{id}$ follows the exact same logic just
 recasting everything in the domain of hereditary finite sets.
-:::
+::: -->
