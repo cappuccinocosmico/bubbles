@@ -76,10 +76,10 @@ We define
 
     to be the natural transformation
     associating every object $x \in \mathcal{A}$ with the arrow in
-    $\mathcal{B}$ $$\begin{aligned}
-                F(x) \xrightarrow[]{id_{F(x)}} F(x)
-            
-    \end{aligned}$$
+    $\mathcal{B}$ 
+    $$
+    F(x) \xrightarrow[]{id_{F(x)}} F(x)
+    $$
 
 -   Given three functors $F,G,H$ between $\mathcal{A}$ and
     $\mathcal{B}$, and natural transformations
@@ -141,7 +141,7 @@ The 2-Category $Cat$ is the category where
 :::
 
 ### Exercises
-<!-- 
+
 :::note[Exercise]
 Suppose $\alpha: F \Rightarrow G$ is a natural isomorphism. Show that
 the inverses of the component morphisms define the components of a
@@ -153,30 +153,25 @@ Prove that for any category $\mathcal{A}$ that $\mathcal{A}$ is
 equivalent to $sk(\mathcal{A})$
 :::
 
-:::warning[Answer]
-:::
 
 :::note[Exercise]
 Show that for any 2 skeletal categories $A$ and $B$, then an equivalence
 between $A$ and $B$ forms an isomorphism from $A$ to $B$
 :::
 
-:::warning[Answer]
-:::
 
 :::note[Exercise]
 Show that for any functor $\mathcal{A} \xrightarrow[]{F} \mathcal{B}$
-that the identity natural transformation defined in Definition
-[\[def:funccat\]](#def:funccat){reference-type="ref"
-reference="def:funccat"} is actually a natural transformation that
-satisfies: $$\begin{tikzcd}
+that the identity natural transformation defined in Definition (Figure out how links work) is actually a natural transformation that
+satisfies: 
+<!-- $$\begin{tikzcd}
     {F(x)} & {F(x)} \\
     {F(y)} & {F(y)}
     \arrow["{F(f)}"', from=1-1, to=2-1]
     \arrow["{\mu_x}", from=1-1, to=1-2]
     \arrow["{\mu_y}"', from=2-1, to=2-2]
     \arrow["{F(f)}", from=1-2, to=2-2]
-\end{tikzcd}$$
+\end{tikzcd}$$ -->
 :::
 
 :::note[Exercise]
@@ -184,17 +179,16 @@ Show that for any functors
 $\mathcal{A} \xrightarrow[]{F,G,H} \mathcal{B}$, and natural
 transformations $F \xRightarrow{\alpha} G$ and $G \xRightarrow{\beta}H$
 that the composition natural transformation $\beta \circ \alpha$ defined
-in Definition [\[def:funccat\]](#def:funccat){reference-type="ref"
-reference="def:funccat"} is actually a natural transformation that
-satisfies: 
-$$\begin{tikzcd}
+above is actually a natural transformation that satisfies the necessary properties
+of a natural transformation: 
+<!-- $$\begin{tikzcd}
     {F(x)} & {F(x)} \\
     {H(y)} & {H(y)}
     \arrow["{F(f)}"', from=1-1, to=2-1]
     \arrow["{\mu_x}", from=1-1, to=1-2]
     \arrow["{\mu_y}"', from=2-1, to=2-2]
     \arrow["{H(f)}", from=1-2, to=2-2]
-\end{tikzcd}$$
+\end{tikzcd}$$ -->
 :::
 
 :::note[Exercise]
@@ -206,23 +200,27 @@ finite sets $V_\omega$ are equivalent as categories.
 We can prove this by showing that there are 2 functors $Y$ and $Y'$, and
 a natural isomorphism between $Y'\circ Y \cong FinSet_{id}$ and
 $Y \circ Y' \cong (V_\omega)_{id}$ Since every finite set $a$ has a
-bijection between it and a natural number $|a|$ like so $$\begin{tikzcd}
+bijection between it and a natural number $|a|$ like so 
+<!-- $$\begin{tikzcd}
         a & {|a|}
         \arrow["{a_*}", curve={height=-6pt}, tail, two heads, from=1-1, to=1-2]
         \arrow["{a_*^{-1}}", curve={height=-6pt}, tail, two heads, from=1-2, to=1-1]
-    \end{tikzcd}$$ We can then say our functor $Y(a)= |a|$ and for a
+\end{tikzcd}$$  -->
+We can then say our functor $Y(a)= |a|$ and for a
 function $a \rightarrow{f} b$ then $Y(f)$ can be defined as
-$$\begin{gathered}
-        |a| \xrightarrow{a_*^{-1}} a \xrightarrow{f} b \xrightarrow{b_*} |b|\\
+$$
+        |a| \xrightarrow{a_*^{-1}} a \xrightarrow{f} b \xrightarrow{b_*} |b|
+$$
+$$
         Y(f) = b_* \circ f \circ a_*^{-1}
-    
-\end{gathered}$$ And we can see that it respects composition
-$$\begin{aligned}
+$$
+And we can see that it respects composition
+$$\begin{align}
         Y(g) \circ Y(f) &= c_* \circ g \circ b_*^{-1} \circ b_* \circ f \circ a_*^{-1}\\
         &= c_* \circ g \circ  f \circ a_*^{-1}\\
         &= Y(g \circ f)
-    
-\end{aligned}$$ We define $Y'$ using the exact same construction since
+\end{align}$$
+ We define $Y'$ using the exact same construction since
 every hereditary finite set is also a set, we can associate it with a
 natural number all the same. We also know that if $a$ is in the natural
 numbers then $a_*$ the identitfy function on $a$ namely $a_{id}$. Notice
@@ -235,21 +233,24 @@ We can now create the natural isomorphism between
 $Y'\circ Y \cong FinSet_{id}$. Luckily we already have a candidate at
 the ready, where we can associate every element $a$ with a morphism
 $a_*$. We now must verify the commutative square saying that
-$$\begin{tikzcd}
+<!-- $$\begin{tikzcd}
         {a} & {|a|} \\
         {b} & {|b|}
         \arrow["{f}"', from=1-1, to=2-1]
         \arrow["{a_*}", from=1-1, to=1-2]
         \arrow["{b_*}"', from=2-1, to=2-2]
         \arrow["{F'(F(f))}", from=1-2, to=2-2]
-    \end{tikzcd}$$ Alternatively prove that
+    \end{tikzcd}$$  -->
+Alternatively prove that
 $b_* \circ f = F'(F(f)) \circ  a_*$. Using that
 $F'(F(f))= b_* \circ f \circ a_*^{-1}$, and we can conclude the proof
-like so $$\begin{aligned}
+like so 
+$$\begin{aligned}
         F'(F(f)) \circ  a_* &= b_* \circ f \circ a_*^{-1} \circ a_*\\
         &= b_* \circ f 
     
-\end{aligned}$$ Thus $Y'\circ Y \cong FinSet_{id}$. Showing that
+\end{aligned}$$
+Thus $Y'\circ Y \cong FinSet_{id}$. Showing that
 $Y \circ Y' \cong (V_\omega)_{id}$ follows the exact same logic just
 recasting everything in the domain of hereditary finite sets.
-::: -->
+:::
