@@ -215,11 +215,13 @@ $$
         Y(f) = b_* \circ f \circ a_*^{-1}
 $$
 And we can see that it respects composition
-$$\begin{align}
+$$
+\begin{align}
         Y(g) \circ Y(f) &= c_* \circ g \circ b_*^{-1} \circ b_* \circ f \circ a_*^{-1}\\
         &= c_* \circ g \circ  f \circ a_*^{-1}\\
         &= Y(g \circ f)
-\end{align}$$
+\end{align}
+$$
  We define $Y'$ using the exact same construction since
 every hereditary finite set is also a set, we can associate it with a
 natural number all the same. We also know that if $a$ is in the natural
