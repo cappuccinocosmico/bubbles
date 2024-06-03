@@ -1,6 +1,6 @@
 # Categories III: Natural Transformations and 2-Categories
 
-::: definition
+:::info[definition]
 A Natural transformation $\mu$ between two functors
 $A \xrightarrow{F} B$ and $A \xrightarrow{G} B$, associates every object
 $x \in A$ with an arrow in $B$, $\mu_x$ with the following domain and
@@ -17,12 +17,12 @@ diagram commutes. $$\begin{tikzcd}
 \end{tikzcd}$$
 :::
 
-::: definition
+:::info[definition]
 A natural isomorphism is a natural transformation $\mu$ where every
 morphism $\mu_x$ is a bijection/isomorphism.
 :::
 
-::: definition
+:::info[definition]
 Two categories are $A$ and $B$ are equivalent if there exist functors
 $A \xrightarrow{F} B$ and $B \xrightarrow{G} A$ such that there is a
 natural isomorphism between $F \circ G$ and $A_{id}$ as well as a
@@ -40,7 +40,7 @@ natural isomorphism between $G \circ F$ and $B_{id}$ $$\begin{tikzcd}
 \end{tikzcd}$$
 :::
 
-::: theorem
+:::tip[Theorem]
 All \"categorical\" constructions, any definition of a sets/object by
 only referencing their behavior with respect to functions/arrows, (aka
 no subsets, no inclusion, no equality on objects) respect equivalence of
@@ -48,7 +48,7 @@ categories, the same way all operations in group theory respect
 isomorphism of groups and the like.
 :::
 
-::: definition
+:::info[definition]
 []{#def:funccat label="def:funccat"} For any two categories
 $\mathcal{A},\mathcal{B}$, we define the category
 $\mathcal{B}^\mathcal{A}$ to be the category of functors from
@@ -88,7 +88,7 @@ exercise solutions.
 
  
 
-::: definition
+:::info[definition]
 A 2-Category $C$ consists of a collection of objects, a collection of
 1-morphisms $Hom_C(a,b)$ for every ordered pair of objects
 $a,b \in \mathcal{O}$. And a collection $Hom2(f,g)$ for every ordered
@@ -117,7 +117,7 @@ Another way of formalizing a 2-category is a regular category where your
 HomSets are replaced with HomCategories. Using this we can finally
 define the category of categories
 
-::: definition
+:::info[definition]
 The 2-Category $Cat$ is the category where
 
 -   The objects of $Cat$ are small categories (ie, categories with only
@@ -130,29 +130,29 @@ The 2-Category $Cat$ is the category where
 
 ### Exercises
 
-::: Exercise
+:::note[Exercise]
 Suppose $\alpha: F \Rightarrow G$ is a natural isomorphism. Show that
 the inverses of the component morphisms define the components of a
 natural isomorphism $\alpha^{-1}: G \Rightarrow F$.
 :::
 
-::: Exercise
+:::note[Exercise]
 Prove that for any category $\mathcal{A}$ that $\mathcal{A}$ is
 equivalent to $sk(\mathcal{A})$
 :::
 
-::: Answer
+:::danger[Answer]
 :::
 
-::: Exercise
+:::note[Exercise]
 Show that for any 2 skeletal categories $A$ and $B$, then an equivalence
 between $A$ and $B$ forms an isomorphism from $A$ to $B$
 :::
 
-::: Answer
+:::danger[Answer]
 :::
 
-::: Exercise
+:::note[Exercise]
 Show that for any functor $\mathcal{A} \xrightarrow[]{F} \mathcal{B}$
 that the identity natural transformation defined in Definition
 [\[def:funccat\]](#def:funccat){reference-type="ref"
@@ -167,7 +167,7 @@ satisfies: $$\begin{tikzcd}
 \end{tikzcd}$$
 :::
 
-::: Exercise
+:::note[Exercise]
 Show that for any functors
 $\mathcal{A} \xrightarrow[]{F,G,H} \mathcal{B}$, and natural
 transformations $F \xRightarrow{\alpha} G$ and $G \xRightarrow{\beta}H$
@@ -184,12 +184,12 @@ satisfies: $$\begin{tikzcd}
 \end{tikzcd}$$
 :::
 
-::: Exercise
+:::note[Exercise]
 Show the category of finite sets $FinSet$ and the category of hereditary
 finite sets $V_\omega$ are equivalent as categories.
 :::
 
-::: Answer
+:::danger[Answer]
 We can prove this by showing that there are 2 functors $Y$ and $Y'$, and
 a natural isomorphism between $Y'\circ Y \cong FinSet_{id}$ and
 $Y \circ Y' \cong (V_\omega)_{id}$ Since every finite set $a$ has a

@@ -2,7 +2,7 @@
 
 Yoneda's lemma often takes 2 forms, the first form begins like so
 
-::: definition
+:::info[definition]
 For a category $\mathcal{C}$ every object in $c \in C$ gives rise to a
 functor $Hom(c,\_)$ from $C \xrightarrow[]{Hom(c,\_)} Set$. Such that
 for every $x \in C$ maps $x$ to the hom set $Hom(c,x)$ and for every
@@ -23,7 +23,7 @@ $Hom(\_,c)$ giving us a functor from
 $\mathcal{C}^{op} \xrightarrow[]{Hom(_,c)} Set$
 :::
 
-::: theorem
+:::tip[Theorem]
 Pick a category $\mathcal{C}$ and a functor $F$ between
 $\mathcal{C} \xrightarrow[]{F} Set$. Using the definition above an
 element $c \in \mathcal{C}$ also defines a functor
@@ -45,7 +45,7 @@ $$\begin{aligned}
 Remember that for any natural $\alpha$ between $Hom(Hom)$
 :::
 
-::: definition
+:::info[definition]
 Another way to think about the Hom functor is as a map between the
 category $\mathcal{C}^{op} \times  \mathcal{C} \xrightarrow{Hom} Set$.
 (Remember product categories consist of pairs of objects $(a,b)$ one
@@ -75,7 +75,7 @@ to two other functors using the exponential property: $$\begin{gathered}
 \end{gathered}$$ The first functor is called the \"Yoneda Embedding\"
 :::
 
-::: definition
+:::info[definition]
 A functor $A \xrightarrow{F} B$ defines a map between
 $Hom(a_1,a_2) \xrightarrow[]{f^\* } Hom(f(a_1),f(a_2))$ for all pairs
 $a_1,a_2 \in A$. Then $F$ is:
@@ -96,7 +96,7 @@ $a_1,a_2 \in A$. Then $F$ is:
 Using all this we can write a different often more convinent form of the
 yoneda lemma:
 
-::: theorem
+:::tip[Theorem]
 The functors $$\begin{gathered}
         \mathcal{C} \xrightarrow{Yo} Set^{\mathcal{C}^{op}}\\
         \mathcal{C}^{op} \xrightarrow{Yo^{op}} Set^{\mathcal{C}}
@@ -106,11 +106,11 @@ The functors $$\begin{gathered}
 
 These enable us to further talk about what exactly these things are
 
-::: definition
+:::info[definition]
 A presheaf of a category $C$, is the category $Set^{C^{op}}$
 :::
 
-::: definition
+:::info[definition]
 A presheaf of a category $C$ ($Set^{C^{op}}$) is the \"free
 cocompletion\" of the category $C$. The \"free cocompletion\" can be
 conceptualized as \"freely adjoining colimits to C\" What this means is
@@ -137,18 +137,18 @@ $$\begin{tikzcd}
 
 Also crucially for our understanding of topos theory.
 
-::: theorem
+:::tip[Theorem]
 For a small $C$, $Set^C$ is a topos.
 :::
 
 ### Exercises {#exercises .unnumbered}
 
-::: Exercise
+:::note[Exercise]
 Prove that given a Full Functor $A \xrightarrow[]{F} B$. Then for any 2
 elements $x,y \in A$ if $F(x) \cong F(y)$, then $x \cong y$
 :::
 
-::: Exercise
+:::note[Exercise]
 Prove Yoneda Consequence #1, namely if for all $x \in \mathcal{C}$ if
 $Hom(x,a) \cong Hom(x,b)$ then $a \cong b$. (Use the definition of a
 yoneda embedding)

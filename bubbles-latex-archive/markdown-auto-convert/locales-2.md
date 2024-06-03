@@ -87,5 +87,5 @@ from −1 to 2, the zag 2\>1, and the zig (1,b)⊆(1,∞). This is always a
 valid zigzag, so K=ℝ. Therefore, the finite collection �� covers the
 unit interval. ▮
 
-::: lemma
+:::tip[Lemma]
 :::

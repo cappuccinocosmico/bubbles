@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+title: "Intuitive Propositional Logic"
+---
 # Proofs and Evidence
 
 If our goal of mathematics is to try to formalize the validity of
@@ -9,7 +13,7 @@ all of the conventional behaviors defined of propositions defined in
 conventional propositional logic are reworked as rules regarding how
 properties interact with proofs.
 
-::: definition
+:::info[definition]
 A proposition $p$ is true in $\Gamma$ if there exists a proof taking in
 some assumptions $\Gamma$ and producing a result of $p$.
 :::
@@ -25,27 +29,36 @@ In conventional propositional logic, the conjunction operator \"and\" is
 defined by its truth table. However, in our new framework, we need to
 redefine it in terms of its interaction with proofs.
 
-::: definition
+:::info[definition]
 If we have both a proof of $p$ and a proof of $q$, then we can construct
 a proof of $p \land q$.
 :::
 
 This is often denoted as:
-$$\frac{\pi_p : p, \pi_q : q}{\pi: p \land q}\quad(\text{and-intro})$$
+$$
+\frac{\pi_p : p, \pi_q : q}{\pi: p \land q}\quad(\text{and-intro})
+$$
 [^1]
 
 Where $\pi_p$ and $\pi_q$ are the proofs of $p$ and $q$ respectively.
 And $\pi$ is the combined proof of $p \land q$
 
-::: definition
+:::info[definition]
 If we have a proof of $p \land q$, then we can construct a proof of $p$
 and a proof of $q$.
 :::
 
-This is often denoted as:
+This is often denoted this
 
-$$\frac{\pi : p \land q}{\pi_p : p}\quad(\text{and-left})$$
-$$\frac{\pi : p \land q}{ \pi_q : q}\quad(\text{and-right})$$
+$$
+\frac{\pi : p \land q}{\pi_p : p}\quad(\text{and-left})
+$$
+
+and this
+
+$$
+\frac{\pi : p \land q}{ \pi_q : q}\quad(\text{and-right})
+$$
 
 Where $\pi_p$ and $\pi_q$ are the projections of the proof $\pi$ onto
 $p$ and $q$ respectively.
@@ -62,13 +75,15 @@ Unfortunately implication is slightly more complicated.
 The introduction rule for implication states that if we can prove $q$
 assuming $p$, then we can construct a proof of $p \Rightarrow q$.
 
-::: definition
+:::info[definition]
 If we have a proof of $q$ from the assumption $p$, then we can construct
 a proof of $p \Rightarrow q$.
 :::
 
 This is often denoted as:
-$$\frac{\pi_p : p \vdash \pi_q : q}{\pi: p \Rightarrow q}\quad(\text{implication-intro})$$
+$$
+\frac{\pi_p : p \vdash \pi_q : q}{\pi: p \Rightarrow q}\quad(\text{implication-intro})
+$$
 
 Where $\pi_p$ is the proof of $p$, $\pi_q$ is the proof of $q$ from the
 assumption $p$, and $\pi$ is the constructed proof of $p \Rightarrow q$.
@@ -86,13 +101,15 @@ The elimination rule for implication, also known as modus ponens, states
 that if we have a proof of $p \Rightarrow q$ and a proof of $p$, then we
 can construct a proof of $q$.
 
-::: definition
+:::info[definition]
 If we have a proof of $p \Rightarrow q$ and a proof of $p$, then we can
 construct a proof of $q$.
 :::
 
 This is often denoted as:
-$$\frac{\pi : p \Rightarrow q, \pi_p : p}{\pi_q : q}\quad(\text{implication-elim})$$
+$$
+\frac{\pi : p \Rightarrow q, \pi_p : p}{\pi_q : q}\quad(\text{implication-elim})
+$$
 
 Where $\pi$ is the proof of $p \Rightarrow q$, $\pi_p$ is the proof of
 $p$, and $\pi_q$ is the constructed proof of $q$.
@@ -100,7 +117,7 @@ $p$, and $\pi_q$ is the constructed proof of $q$.
 There is also a special symbol for propositional equivalence that gets
 used frequently.
 
-::: definition
+:::info[definition]
 The proposition $A \iff B$ is short for
 $(A \implies B) \land (B \implies A)$
 :::
@@ -113,15 +130,19 @@ The introduction rules for \"or\" are in some sense mirrored versions of
 the elimination rules for \"and\" namely if we have a proof of either
 $q$, or $p$, then we can construct a proof of $p \lor q$.
 
-::: definition
+:::info[definition]
 If we have a proof of $p$, then we can construct a proof of $p \lor q$.
 Likewise if we have a proof of $q$, then we can construct a proof of
 $p \lor q$.
 :::
 
 This is often denoted as:
-$$\frac{\pi_p : p}{\pi : p \lor q}\quad(\text{or-left})$$
-$$\frac{\pi_q : q}{\pi : p \lor q}\quad(\text{or-right})$$
+$$
+\frac{\pi_p : p}{\pi : p \lor q}\quad(\text{or-left})
+$$
+$$
+\frac{\pi_q : q}{\pi : p \lor q}\quad(\text{or-right})
+$$
 
 Where $\pi_p$ and $\pi_q$ is the proof of $p$ and $q$ respectively, and
 $\pi$ is the constructed proof of $p \lor q$.
@@ -134,7 +155,7 @@ Notice that we get an interesting property from the or introduction
 rules, since the only way to prove $A \lor B$ is with a proof of $A$ or
 $B$ we have
 
-::: lemma
+:::tip[Lemma]
 Specifically if there exists a proof of $A \lor B$ with no assumptions ,
 it implies either there exists a proof of $A$, or there exists a proof
 of $B$ with no assumptions.
@@ -142,14 +163,18 @@ of $B$ with no assumptions.
 
 At least without introducing further assumptions.
 
-::: definition
+:::info[definition]
 If we have a proof of $p \lor q$, and we have proofs of $r$ from the
 assumptions $p$ and $q$, then we can construct a proof of $r$.
 :::
 
 This is often denoted as:
-$$\frac{\pi : p \lor q, \pi_{p} : p \Rightarrow r, \pi_{q} : q \Rightarrow r}{\pi_r : r}
-    \quad(\text{or-elim})$$
+$$
+
+\frac{\pi : p \lor q, \pi_{p} : p \Rightarrow r, \pi_{q} : q \Rightarrow r}{\pi_r : r}
+    \quad(\text{or-elim})
+
+$$
 
 Where $\pi$ is the proof of $p \lor q$, $\pi_p$ and $\pi_q$ are the
 proofs of $p$ implies $r$ and $q$ implies $r$ respectively, letting us
@@ -167,7 +192,7 @@ beautiful dualities will return!
 
 The introduction rule for \"True\"/$\top$ is straightforward:
 
-::: definition
+:::info[definition]
 We can always construct a proof of \"True\".
 :::
 
@@ -175,11 +200,11 @@ This is often denoted as:
 
 $$\frac{}{\star : \top}\quad(\text{true-intro})$$
 
-::: lemma
+:::tip[Lemma]
 The trivially true proposition is true.
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Use the introduction rule for truth to generate a proof. ◻
 :::
 
@@ -192,7 +217,7 @@ As for False it cannot have an introduction rule as we cannot construct
 a proof of \"False\" without contradicting ourselves. The elimination
 rule for \"False\" is more interesting:
 
-::: definition
+:::info[definition]
 If we have a proof of \"False\", then we can construct a proof of any
 proposition $p$.
 :::
@@ -207,7 +232,7 @@ of explosion.)
 
 Having the False proposition lets us define something interesting
 
-::: definition
+:::info[definition]
 The proposition \"not p\" written as $\neg p$, is defined to be the
 proposition \"$p$ implies False\", or $p \implies \bot$. (Assuming some
 context $\Gamma$)
@@ -216,8 +241,8 @@ context $\Gamma$)
 This looks really spooky, but it is really just the classic definition
 of proof by contradiction. An example might be helpful
 
-::: example
-::: proof
+:::info[example]
+:::note[Proof]
 *Proof.* Our goal is to prove the statement \"$\sqrt{2}$ is not
 rational\", writing this on our system we would have
 $\neg (\sqrt{2}\text{ is not rational})$. Uing the definition of
@@ -242,14 +267,14 @@ contradiction). ◻
 number theory, but for now its a good example.)
 :::
 
-::: definition
+:::info[definition]
 A proposition $p$ is false in a context $\Gamma$ if their exists a proof
 taking in our assumptions $\Gamma$ and producing $\neg p$. $(\Gamma \l)$
 :::
 
 ## Decideability and the Law of Excluded Middle
 
-::: definition
+:::info[definition]
 A proposition $p$ is decidable if $p \lor \neg p$ is true.
 (Alternatively saying that $p$ is either true or false.)
 :::
@@ -274,12 +299,12 @@ naturals to the naturals is computable, etc\...).
 
 Furthermore, even if we dont assume the law of excluded middle we have:
 
-::: theorem
+:::tip[Theorem]
 For any proposition $p$, there is no proof showing that $p$ is
 undecideable. (aka, there is no proof showing $\neg(p \lor \neg p)$)
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* If we want to show that there is no proof of
 $\neg (p \lor \neg p)$, by the definition of negation, we should assume
 there does exist a proof of $\neg (p \lor \neg p)$ and strive for a
@@ -327,14 +352,14 @@ theorem not_not_lem (p : Prop) : ¬ ¬ (p ∨ ¬ p) := by
 This statement (plus some details in the homework) lets us conclude the
 following result,
 
-::: theorem
+:::tip[Theorem]
 Any proposition $\neg \neg P$ is provable from a set of axioms $\Gamma$
 $(\Gamma \vdash \neg \neg P)$ if and only if $P$ is provable from
 $\Gamma$ with the assumption that the law of excluded midddle holds.
 $(\Gamma, LEM \vdash P)$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Use the following solutions to homework problems.
 
 1.  $(\neg \neg P) \land (\neg \neg Q) \iff  \neg \neg (P \land Q)$
@@ -347,7 +372,7 @@ Then combine these principles, along with the theorem about the not not
 law of excluded middle. To go in both directions. (ALSO HOMEWORK) ◻
 :::
 
-::: definition
+:::info[definition]
 A proposition $p$ is called \"classically true\" if there exists a proof
 of $\neg \neg p$. (Assuming some context $\Gamma$)
 :::
@@ -357,11 +382,11 @@ excluded middle, we dont actually loose out on any mathematical
 structure. All that structure is perfectly preserved in the behavior of
 doubly negated propositions.
 
-::: Exercise
+:::note[Exercise]
 Let $P$ be a proposition. Then $P$ implies $\neg\neg P$.
 :::
 
-::: Answer
+:::danger[Answer]
 We start by assuming $P$ and try to create a proof of $\neg\neg P$. To
 show that it will suffice to assume $\neg P$ be true and cause a
 contradiction. Then $\neg P$ is a proof that $P$ is false, but we have
@@ -369,13 +394,13 @@ assumed $P$ is true. This is a contradiction, so our assumption that
 $\neg P$ is true must be false. Therefore, $\neg\neg P$ is true.
 :::
 
-::: Exercise
+:::note[Exercise]
 Let $P$ be a proposition. If $P$ is decidable (i.e., either $P$ or
 $\neg P$ is true), then $P$ is stable (i.e., $P$ is equivalent to
 $\neg\neg P$).
 :::
 
-::: Answer
+:::danger[Answer]
 Suppose $P$ is decidable, i.e., either $P$ or $\neg P$ is true. We need
 to show that $P$ is equivalent to $\neg\neg P$. First, suppose $P$ is
 true. Then $\neg\neg P$ is true by the previous exercise. Now, suppose
@@ -391,12 +416,12 @@ In both cases, we have shown that $P$ is equivalent to $\neg\neg P$, so
 $P$ is stable.
 :::
 
-::: Exercise
+:::note[Exercise]
 Let $P$ and $Q$ be propositions. If $P$ implies $Q$, then $\neg Q$
 implies $\neg P$.
 :::
 
-::: Answer
+:::danger[Answer]
 Suppose $P$ implies $Q$. Let $\neg Q$ be true. We need to show that
 $\neg P$ is true. Suppose, for the sake of contradiction, that $P$ is
 true. Then, by our assumption, $Q$ is true. But this contradicts our
@@ -404,12 +429,12 @@ assumption that $\neg Q$ is true. Therefore, our assumption that $P$ is
 true must be false, and we conclude that $\neg P$ is true.
 :::
 
-::: Exercise
+:::note[Exercise]
 Let $P$ be a proposition. Then $\neg P$ is equivalent to
 $\neg\neg\neg P$.
 :::
 
-::: Answer
+:::danger[Answer]
 We need to show that $\neg P$ implies $\neg\neg\neg P$ and vice versa.
 
 ##### Forward Direction $\neg P \implies \neg\neg\neg P$
@@ -417,13 +442,13 @@ We need to show that $\neg P$ implies $\neg\neg\neg P$ and vice versa.
 ##### Backward Direction $\neg\neg\neg P \implies \neg P$
 :::
 
-::: Exercise
+:::note[Exercise]
 For any two propositions $P$ and $Q$, the following equivalence holds:
 $$(\neg P) \land (\neg Q) \iff \neg (P \lor Q)$$
 :::
 
-::: Answer
-::: proof
+:::danger[Answer]
+:::note[Proof]
 *Proof.* We split this proof into 2 sections
 
 ##### Forward Implication {#forward-implication .unnumbered}
@@ -464,11 +489,11 @@ This completes the proof of the equivalence. ◻
 :::
 :::
 
-::: Exercise
+:::note[Exercise]
 Prove that $(\neg P) \vee (\neg Q) \Rightarrow \neg (P \wedge Q)$.
 :::
 
-::: Answer
+:::danger[Answer]
 Since we are trying to prove a contradiction, let us assume we have a
 proof $h$ that either $P$ is false or $Q$ is false (i.e.,
 $(\neg P) \vee (\neg Q)$), and try to derive a proof of

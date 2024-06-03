@@ -1,11 +1,11 @@
 # Categories II:Skeletons, Functors and Equivalences
 
-::: definition*
+:::info[definition]*
 A Category $C$ is skeletal if 2 objects $a,b$ are isomorphic then
 $a =b$, aka $a \cong b \iff a =b$
 :::
 
-::: definition*
+:::info[definition]*
 A Skeleton of a Category $\mathcal{C}$ ($sk(\mathcal{C})$) is a skeletal
 category constructed like so:
 
@@ -21,14 +21,14 @@ category constructed like so:
     $\mathcal{C}$
 :::
 
-::: example
+:::info[example]
 A skeleton of $FinSet$ is the category $\mathbb{N}$, where the objects
 are the natural numbers constructed with peano arithmetic
 $(\phi, \{\phi \}, \{\phi,\{\phi\}\})$, and the arrows are standard set
 functions.
 :::
 
-::: definition*
+:::info[definition]*
 A Functor $F$ between two categories $A$ and $B$ maps every object
 $x \in \mathcal{O}(A)$ to an object $F(x) \in \mathcal{O}(B)$, and maps
 every arrow $x \xrightarrow{f} y$ to an arrow
@@ -42,7 +42,7 @@ and codomain. Such that
 (You can think of them as the homomorphisms of categories)
 :::
 
-::: definition*
+:::info[definition]*
 For every category $A$ there is a functor $id_A: A \Rightarrow A$ that
 for every object $x \in A$ then $id_A(x)=x$ and every function
 $x \xrightarrow[]{f} y$ then $id_A(f)=f$
@@ -57,17 +57,17 @@ such that $F \circ F^{-1}=id_B$ and $F^{-1}\circ F = id_A$
 isomorphic to $sk(B)$
 :::
 
-::: theorem
+:::tip[Theorem]
 Any construction on categories is going to respect the equivalence of
 categories.
 :::
 
 ## Exercises
 
-::: Exercise
+:::note[Exercise]
 Show that functors preserve isomorphisms.
 
-::: proof
+:::note[Proof]
 *Proof.* Suppose that between categories $A$ and $B$ there exists a
 functor $F: A \rightarrow B$ suppose that for $x,y \in A$ there exists
 an isomorphism $f: x \rightarrow y$ with inverse $g: y \rightarrow x$.
@@ -93,7 +93,7 @@ Since $F(f)\circ F(g) = id_{F(y)}$ and $F(g)\circ F(f) = id_{F(x)}$ it
 follows by def. isomorphism that $F(x) \cong F(y)$.
 :::
 
-::: Answer
+:::danger[Answer]
 Consider a functor $F: \mathrm{C} \rightarrow \mathrm{D}$ and an
 isomorphism $f: x \rightarrow y$ in $\mathrm{C}$ with inverse
 $g: y \rightarrow x$. Applying the two functoriality axioms:
@@ -103,7 +103,7 @@ $F x \xrightarrow{F (g)} F y$. Exchanging the roles of $f$ and $g$ (or
 arguing by duality) shows that $F g$ is also a right inverse.
 :::
 
-::: Exercise
+:::note[Exercise]
 Try to construct a functor from Set (The category of sets) into Grp (The
 category of Groups) that will map a set to some group, where the
 elements of the set will correspond to the generators of the group.
@@ -111,7 +111,7 @@ elements of the set will correspond to the generators of the group.
 arbitrarily shuffled around). Hint[^1]
 :::
 
-::: Exercise
+:::note[Exercise]
 Consider a group $z$ inside the category of groups (or more generally an
 object $z$ inside any category $\mathcal{C}$). Let us define a functor
 $Hom(z,\_): \mathcal{C} \rightarrow Set$, that maps an object
@@ -129,7 +129,7 @@ $$\begin{tikzcd}
 functors namely $Hom(z,\_)(id_x)= id_{Hom(z,\_)(x)}$ and
 $Hom(z,\_)(f \circ g) =Hom(z,\_)(f)  \circ Hom(z,\_)(g)$
 
-::: proof
+:::note[Proof]
 *Proof.* ◻
 :::
 :::

@@ -2,7 +2,7 @@
 
 ## Definitions
 
-::: definition*
+:::info[definition]*
 A Category $C$ consists of a class of objects $\mathcal{O}$, and a set
 of arrows $Hom_C(a,b)$ for every ordered pair of objects
 $a,b \in \mathcal{O}$. There exist certain arrows
@@ -40,14 +40,14 @@ These arrows must satisfy certain properties namely:
             \end{tikzcd}$$
 :::
 
-::: definition*
+:::info[definition]*
 Two objects $a,b$ in a category $\mathcal{C}$ are isomorphic if and only
 if there exists an arrow $a \xrightarrow[]{f} b$ and an arrow
 $b \xrightarrow[]{f^{-1}} a$ such that $f \circ f^{-1} = id_b$ and
 $f^{-1} \circ f = id_a$. (This is often written as $a \cong b$)
 :::
 
-::: definition
+:::info[definition]
 A Monomorphism in a category $\mathcal{C}$ is an arrow $x$ from
 $a \xrightarrow[]{x} b$, such that for every $c$ and arrows
 $c \xrightarrow[]{f} a$ and $c \xrightarrow[]{g} a$. $$\begin{tikzcd}
@@ -64,7 +64,7 @@ enough that if $f$ is a monomorphism it is drawn like: $$\begin{tikzcd}
 \end{tikzcd}$$
 :::
 
-::: definition
+:::info[definition]
 This is just the dual of a monomorphism, namely an arrow
 $a \xrightarrow[]{x} b$, such that for every $b \xrightarrow[]{f} c$ and
 $b \xrightarrow[]{g} c$. $$\begin{tikzcd}
@@ -79,7 +79,7 @@ We can think of monomorphisms as categorical generalization of an
 \"injective function\". (And likewise epimorphisms as categorical
 generalizations of a \"surjective function\").
 
-::: definition*
+:::info[definition]*
 A preorder $\mathbb{X}$ is a set with a relation $a \rightsquigarrow b$,
 that satisfies
 
@@ -92,11 +92,11 @@ We say that $a \cong b$ if and only if $a \rightsquigarrow b$ and
 $b \rightsquigarrow a$
 :::
 
-::: definition*
+:::info[definition]*
 A partial order is a preorder where $a \cong b$ if and only if $a=b$
 :::
 
-::: definition*
+:::info[definition]*
 A Preorder is either
 
 -   A category with the special property that for any 2 arrows between
@@ -110,7 +110,7 @@ A Preorder is either
 
 ## Exercises
 
-::: Exercise
+:::note[Exercise]
 Is a partial order just a skeletal preorder?
 
 Short answer, yes. I will take a look at each of the three definitions
@@ -132,7 +132,7 @@ up, as a skeltal category $C$ is a category in which two objects are
 isomorphic iff they're equal.
 :::
 
-::: Exercise
+:::note[Exercise]
 1.  Show that $id_a$ is unique, aka if there are two arrows
     $a \xrightarrow[]{f} a$ and $a \xrightarrow[]{g} a$ where both
     satisfy the properties of the identity arrow, namely:
@@ -152,7 +152,7 @@ isomorphic iff they're equal.
     fact that $F(f \circ g)= F(f) \circ F(g)$.
 :::
 
-::: Answer
+:::danger[Answer]
 1.  Consider our two arrows $f,g$ that satisfy the properties of an
     identity arrow. Now using the fact that $f$ is an identity arrow we
     have $f \circ g=g$, and since $g$ is an identity arrow we have
@@ -168,11 +168,11 @@ isomorphic iff they're equal.
     \end{aligned}$$
 :::
 
-::: Exercise
+:::note[Exercise]
 Prove that if an arrow is an isomorphism it is also a monomorphism and
 an epimorphism.
 
-::: proof
+:::note[Proof]
 *Proof.* Let $\mathcal{C}$ be a category and suppose that
 $a,b, \text{ and }c$ are objects in $\mathcal{C}$. Let $x \in Hom(a,b)$
 be an isomorphism and suppose that $f,g \in Hom(b,c)$ for some object

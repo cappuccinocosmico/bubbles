@@ -1,4 +1,9 @@
-::: center
+---
+sidebar_position: 1
+title: "Introduction and The Philosophy of Category Theory"
+---
+<center>
+
 **The Weak Fundamental Philosophy of Category Theory**
 
 The connections between things are more intresting then the things
@@ -7,8 +12,9 @@ themselves.
 **The Strong Fundamental Philosophy of Category Theory**
 
 Everything intresting about an object is captured in the way it
-interacts with other objects. []{#phil:cattheory label="phil:cattheory"}
-:::
+interacts with other objects. 
+</center>
+
 
 This philosophy is borne out in the many ways that category theory
 chooses to analyze many different areas of mathematics
@@ -20,7 +26,7 @@ can alwasy be phrased as \"$\mathfrak{X}$ Theory is about the study of
 $\mathfrak{X}$ and maps between $\mathfrak{X}$'s\". In this sense one
 could define category theory similarly
 
-::: lie
+:::danger[Useful Lie]
 Category Theory is the study of categories and how the properties of
 categories are preserved by functors (maps betwen categories) and
 natural transformations.
@@ -31,7 +37,7 @@ however its also unhelpful since it doesn't serve as a motivation, for
 example when asking a group theoriest \"What is group theory?\" there
 are two potential answers that you could get, namely:
 
-::: lie
+:::danger[Useful Lie]
 Group theory is the study of sets $X$ with a function
 $X \times X \xrightarrow[]{\star} X$ with certain properties, and
 functions between them that preserve $\star$
@@ -39,7 +45,7 @@ functions between them that preserve $\star$
 
 or alternatively
 
-::: lie
+:::danger[Useful Lie]
 Group theory is the mathematical study of symmetry
 :::
 
@@ -58,7 +64,7 @@ amount of information about why we study groups and where the
 applications of group theory tend to show up. So alternative definitions
 can still be helpful for recruitment.
 
-::: lie
+:::danger[Useful Lie]
 Category theory is the study of \"objects\" that behave like sets, and
 \"morphisms\" that behave like functions.
 :::
@@ -68,13 +74,13 @@ way of understanding some concepts in cat theory related to functional
 programming and alternative foundations of math with topos theory. But
 also doesnt
 
-::: lie
+:::danger[Useful Lie]
 Category theory is a framework for transfering concepts between domains.
 :::
 
 (Misses cat systems theory and topos theory)
 
-::: lie
+:::danger[Useful Lie]
 Category theory is a formalization of human cognition with composition
 as the fundamental concept.
 :::
@@ -86,13 +92,13 @@ Number Theory, Set Theory,Topology) have a similar amount of
 philosophical questions. Leading us to the author's favorite definition
 of cat theory
 
-::: lie
+:::danger[Useful Lie]
 Category theory is a zone of disputed territory in the forever war
 between mathematics and philosophy.
 :::
 
 (Vauge enough it means nothing) Leading to the closest
-
+<!--
 # Commutative Diagrams
 
 It is a tradition in mathematics to ocasionaly include diagrams to help
@@ -100,12 +106,12 @@ visualize concepts. Consider if we have 2 functions $f: A \rightarrow B$
 and $g:B \rightarrow C$, then we can draw them, and their compositon
 like so:
 
-$$\begin{tikzcd}
-    A & B & C
-    \arrow["{f(x)}", from=1-1, to=1-2]
-    \arrow["{g(x)}", from=1-2, to=1-3]
-    \arrow["{g(f(x))}"', curve={height=12pt}, from=1-1, to=1-3]
-\end{tikzcd}$$
+ $$\begin{tikzcd}
+     A & B & C
+     \arrow["{f(x)}", from=1-1, to=1-2]
+     \arrow["{g(x)}", from=1-2, to=1-3]
+     \arrow["{g(f(x))}"', curve={height=12pt}, from=1-1, to=1-3]
+ \end{tikzcd}$$
 
 Furthermore, it is often more convinent to define functions using
 diagrams. Consider four functions $f: A \rightarrow B$,
@@ -125,12 +131,12 @@ $$\begin{tikzcd}
 
 The astute reader might be wondering how this diagram captures the
 equality $g(f(x))=j(h(x))$. Well it is where the commutative part of t
+-->
 
-::: definition
+:::info[definition]
 A **Commutative Diagram** is a diagram where any two paths between
 points are identical.
 :::
-
 Good books include
 
 Lawvere's Conceptual mathematics: [@lawvere_conceptual_nodate]
@@ -160,9 +166,12 @@ $x$ after an application of $f$ as $f(x)$, furthermore if we have a
 function $B \xrightarrow[]{g}C$, then if we apply $g$ to $f(x)$ we would
 write this as $g(f(x))$. Under this notation it seems awfuly nice and
 convient to write the composition of functions as $g \circ f$, such that
-$$\begin{aligned}
+$$
     g(f(x)) = (g \circ f)(x)
-\end{aligned}$$ This looks really nice with a conventional notation,
+$$
+
+
+This looks really nice with a conventional notation,
 however
 
 > There is almost a law of the universe that dicates that solutions that
@@ -176,7 +185,7 @@ however
 >
 > are often terrible, ineffective solutions that once implemented will
 > be a drag on civilization forever. -- CGP Grey
-
+<!--
 Namely when you try to actually draw out diagrams with this using the
 standard notation of traveling from right to left you end up with
 $$\begin{tikzcd}
@@ -184,7 +193,9 @@ $$\begin{tikzcd}
     \arrow["{f}", from=1-1, to=1-2]
     \arrow["{g}", from=1-2, to=1-3]
     \arrow["{g\circ f}"', curve={height=12pt}, from=1-1, to=1-3]
-\end{tikzcd}$$ There is a bunch of proposed notation to fix this
+\end{tikzcd}$$ 
+
+There is a bunch of proposed notation to fix this
 starting in the 20th century when people began seeing this as a problem,
 either writing $f$ followed by $g$ as $fg$ using the same notation for
 functions/arrows as group multiplication, under the proposal reverse
@@ -207,3 +218,4 @@ likely use the $\gg$ notation.
 (The author hypothesieses that one reason commutative diagrams have
 become really prevalent in cat theory is to clear up this ambiguity and
 disfunctional notation.)
+-->

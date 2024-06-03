@@ -2,7 +2,7 @@
 
 Write notes on what it means for proofs to be equal
 
-::: theorem
+:::tip[Theorem]
 In a category $\mathcal{C}$ two objects $a,b$ are isomorphic if and only
 if for every object $x \in \mathcal{C}$ then $$\begin{aligned}
         a \cong b \text{ if and only if } Hom(a,x) \cong Hom(b,x) 
@@ -15,7 +15,7 @@ alternatively going the other direction: $$\begin{aligned}
 opposite category.
 :::
 
-::: lie
+:::danger[Useful Lie]
 The category $Lean$ consists of:
 
 1.  Objects being propositions/types in the Lean programming language
@@ -28,28 +28,28 @@ With composition given by inlining proofs, and identity proofs given by
 'rfl' or 'exact hyp'.
 :::
 
-::: definition
+:::info[definition]
 A terminal object in a category $\mathcal{C}$ is an object $\mathbb{1}$
 such that for every object $x \in \mathcal{C}$ there is exactly one
 arrow from $x \rightarrow \mathbb{1}$
 :::
 
-::: example
+:::info[example]
 The terminal object in Lean is the trivially true proposition
 **True**.[^1]
 :::
 
-::: definition
+:::info[definition]
 A terminal object in a category $\mathcal{C}$ is an object $\mathbb{0}$
 such that for every object $x \in \mathcal{C}$ there is exactly one
 arrow from $\mathbb{0} \rightarrow x$
 :::
 
-::: example
+:::info[example]
 The initial object in Lean is the false proposition **False**.[^2]
 :::
 
-::: definition
+:::info[definition]
 A Product of objects $a,b$ in a category, written as $a \times b$, is an
 object with 2 arrows $fst: a\times b \rightarrow a$ and
 $snd: a \times b \rightarrow b$. Such that for any $c \in \mathcal{C}$
@@ -76,7 +76,7 @@ object such that for every object $c \in \mathcal{C}$ $$\begin{aligned}
 \end{aligned}$$
 :::
 
-::: example
+:::info[example]
 Fill in the logical tactics for making and eliminating $a \wedge b$ in
 lean and throw them here and show how they match up exactly with the
 categorical definition
@@ -88,12 +88,12 @@ common in the space.
 This opens us up to the proof method called \"diagram chasing\" that
 will be important skill for the following exercises
 
-::: theorem
+:::tip[Theorem]
 In any category the product is associative,
 $A \times (B \times C) \cong (A \times B)\times C$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Turns out this is fucking hard - Nicole
 
 I'll give it a shot - Jeremy
@@ -121,7 +121,7 @@ That for any $x \in C$ then $$\begin{aligned}
 $(a \times b)\times c = a \times (b \times c)$ ◻
 :::
 
-::: definition
+:::info[definition]
 A Sum of objects $a,b$ in a category, written as $a + b$, is an object
 with 2 arrows $left: a \rightarrow a+b$ and $right: b \rightarrow a+b$.
 Such that for any $c \in \mathcal{C}$ and any pair of proofs
@@ -146,7 +146,7 @@ for every object $c \in \mathcal{C}$ $$\begin{aligned}
 \end{aligned}$$
 :::
 
-::: example
+:::info[example]
 Fill in the logical tactics for making and eliminating $a \vee b$ in
 lean and throw them here and show how they match up exactly with the
 categorical definition. (Specifically note the 'left' and 'right'
@@ -157,11 +157,11 @@ tactic breaking it into 2 proofs)
 Note that in mathematics it seems that proofs of statements like the
 following contradict this
 
-::: lemma
+:::tip[Lemma]
 Either $e+\pi$ or $e \cdot \pi$ is trancendental. (In classical logic)
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* We first assume that $e + \pi$ and $e \cdot \pi$ are algebraic
 and strive for a contradiction. If they both are algebraic, then since
 any polynomial with algebraic coefficients must have algebraic roots
@@ -185,7 +185,7 @@ $\neg(e+\pi \text{ alebraic}) \wedge \neg (e \cdot \pi \text{ algebraic})$
 since de-morgan's laws for propositions require the law of excluded
 middle.
 
-::: definition
+:::info[definition]
 A Sum of objects $a,b$ in a category, written as $b^a$ or
 $a \Rightarrow b$, is an object with one special arrow
 $eval: b^a \times a \rightarrow b$ such that for every object $c$, and
@@ -212,11 +212,11 @@ exponential function of $a,b,c$ should respect
 $b^{a \times c }= (b^a)^c$
 :::
 
-::: example
+:::info[example]
 Implications, with intro being equivalent to eval.
 :::
 
-::: definition
+:::info[definition]
 A Category $\mathcal{C}$ is Cartesian if and only if it has
 
 1.  A Terminal Object
@@ -227,7 +227,7 @@ A Category $\mathcal{C}$ is Cartesian if and only if it has
 have not been relevant to course materials so far.)
 :::
 
-::: definition
+:::info[definition]
 A Category $\mathcal{C}$ is Cartesian Closed if and only if it has
 
 1.  A Terminal Object
@@ -237,7 +237,7 @@ A Category $\mathcal{C}$ is Cartesian Closed if and only if it has
 3.  All Exponentials
 :::
 
-::: example
+:::info[example]
 The following categories are cartesian closed:
 
 1.  The category $Set$, and the category of finite sets $FinSet$
@@ -268,7 +268,7 @@ In addition the following categories are cartesian without being closed
 
 (Stolen from Nlab)
 
-::: lie
+:::danger[Useful Lie]
 The basic ideas of the internal logic induced by a given category
 $\mathcal{C}$ are:
 
@@ -307,14 +307,14 @@ and so on.
 
 ### Exercises
 
-::: Exercise
+:::note[Exercise]
 Consider for a category $\mathcal{C}$ the category $Op(\mathcal{C})$
 where every arrow in $\mathcal{C}$ is reversed, show that
 
 1.  The object $\mathbb{1} \in \mathcal{C}$ corresponds to
     $\mathbb{0}\in Op(\mathcal{C})$
 
-    ::: proof
+    :::note[Proof]
     *Proof.* The terminal object $\mathbb{1} \in \mathcal{(C)}$
     satisfies that for all $x \in (\mathcal{C})$, there is exactly one
     arrow from $x \rightarrow \mathbb{1}$. This means that in for all
@@ -326,7 +326,7 @@ where every arrow in $\mathcal{C}$ is reversed, show that
 2.  The object $a \times b \in (\mathcal{C})$ corresponds to
     $a+b \in Op(\mathcal{(C)})$
 
-    ::: proof
+    :::note[Proof]
     *Proof.* One way of solving this is to look at the diagrams that
     define product/sum and note they are identical except that the
     arrows go in the opposite direction. To nail the definitions into my
@@ -372,11 +372,11 @@ where every arrow in $\mathcal{C}$ is reversed, show that
     :::
 :::
 
-::: Exercise
+:::note[Exercise]
 If a category has 2 terminal objects $\mathbb{1}_x$ and $\mathbb{1}_y$
 prove that $\mathbb{1}_x \cong \mathbb{1}_y$
 
-::: proof
+:::note[Proof]
 *Proof.* By def. terminal object there exists exactly one arrow
 $f: \mathbb{1}_x \rightarrow \mathbb{1}_y$ and exactly one arrow
 $g: \mathbb{1}_y \rightarrow \mathbb{1}_x$. Note also that by the
@@ -397,17 +397,17 @@ equinumerous for any object $c$ in the category. (In particular
 $|Hom(\mathbb{1_{y}}, c)| = |Hom(\mathbb{1_{x}}, c)| = 1$ )
 :::
 
-::: Exercise
+:::note[Exercise]
 Show that for any 2 objects $a,b$ if there are two objects
 $(a\times b)_x$ and $(a \times b)_y$ that satisfy the definition of a
 product, show that $(a \times b)_x \cong (a \times b)_y$.
 :::
 
-::: Answer
+:::danger[Answer]
 There are two proofs for this, one using yoneda's lemma and one not
 using yonedas lemma
 
-::: proof
+:::note[Proof]
 *Proof w/ Yoneda.* Consider that 2 objects $(a \times b)_x$ and
 $(a \times b)_y$ are isomorphic if and only if for every object $c$ then
 the cardinality of the homesets
@@ -420,7 +420,7 @@ $Hom(c,a)$ and $Hom(c,b)$ or alternatively $$\begin{aligned}
 \end{aligned}$$ So by yoneda's lemma they are isomorphic. ◻
 :::
 
-::: proof
+:::note[Proof]
 *Proof w/o Yoneda.* Consider that for this to be the case the following
 ommutative diagrams must always be satisfied for both $(a\times b)x$ and
 $(a \times b)_y$ by their definition as products.
@@ -484,10 +484,10 @@ $(a \times b)_y \cong (a \times b)_x$ ◻
 :::
 :::
 
-::: Exercise
+:::note[Exercise]
 Show that: $\mathbb{1} \times a \cong a$
 
-::: proof
+:::note[Proof]
 *Proof.* Consider that by the def of product the following diagram
 commutes, meaning that any two paths between objects are equal (i.e.,
 the arrows formed via composition that correspond to these "paths" are
@@ -512,7 +512,7 @@ $\mathbb{1} \times a \cong a$. ◻
 :::
 :::
 
-::: Answer
+:::danger[Answer]
 Consider the following diagram $$\begin{tikzcd}
     & a \\
     \mathbb1 & {\mathbb1\times a} & a
@@ -531,13 +531,13 @@ is the only arrow in $Hom(a,\mathbb{1} \times a)$ such that
 $\langle !,id_a\rangle \gg snd = id_a$
 :::
 
-::: Exercise
+:::note[Exercise]
 Use the last 4 exercises to argue using the opposite category that
 
 1.  For any initial objects $\mathbb{0}_x$ and $\mathbb{0}_y$ prove that
     $\mathbb{0}_x \cong \mathbb{0}_y$
 
-    ::: proof
+    :::note[Proof]
     *Proof.* Note that if two objects $a,b \in \mathcal{C}$ are
     isomorphic then their corresponding objects in $Op(\mathcal{C})$
     will be isomorphic. To see, this, note that if $a$ and $b$ are
@@ -580,7 +580,7 @@ Use the last 4 exercises to argue using the opposite category that
     $(a \times b)_y$ that satisfy the definition of a product, show that
     $(a + b)_x \cong (a + b)_y$.
 
-    ::: proof
+    :::note[Proof]
     *Proof.* By exercise 4.1 $(a\times b)_x$ and $(a \times b)_y$ in
     $\mathcal{C}$ correspond to $(a+ b)_x$ and $(a + b)_y$ in
     $Op(\mathcal{C})$. Since $(a\times b)_x \cong (a\times b)_y$ by
@@ -592,7 +592,7 @@ Use the last 4 exercises to argue using the opposite category that
 
 3.  $\mathbb{0} + a_o \cong a_o$
 
-    ::: proof
+    :::note[Proof]
     *Proof.* Since by exercise 4.4, we have that
     $\mathbb{1} \times a \cong a$ in $\mathcal{C}$, and we already know
     that $a$ in $\mathcal{C}$ corresponds to $a_o$ in $Op(\mathcal{C})$,
@@ -605,7 +605,7 @@ Use the last 4 exercises to argue using the opposite category that
     :::
 :::
 
-::: Exercise
+:::note[Exercise]
 In the category $Set$, given a set $G$, and 3 functions
 $G \times G \xrightarrow[]{\star} G$, $\mathbb{1} \xrightarrow[]{e} G$
 and $G \xrightarrow[]{inv} G$, what do the following commutative
@@ -676,7 +676,7 @@ $$\begin{tikzcd}
 \end{tikzcd}$$
 :::
 
-::: Exercise
+:::note[Exercise]
 Consider in the category of sets, the function that takes in 2 natural
 numbers and adds them: $$\begin{aligned}
         \mathbb{N} \times \mathbb{N} \xrightarrow[]{+} \mathbb{N}
@@ -691,7 +691,7 @@ actually does, and give a rationale for why you think it behaves that
 way. (Follow your nose with the definition of the exponential.)
 :::
 
-::: Answer
+:::danger[Answer]
 Consider the def of the exponential object $\mathbb{N}^{\mathbb{N}}$ and
 its relation to the object $\mathbb{N}$ in $Set$ (diagram on the left).
 Consider also the diagram on the right which shows what happens to
@@ -721,22 +721,22 @@ $(\lambda_+(n))(m) = n + m$.
 correct!!! -- Nicole
 :::
 
-::: Exercise
+:::note[Exercise]
 Show that $\mathbb{1}^a\cong \mathbb{1}$
 :::
 
-::: Exercise
+:::note[Exercise]
 Show that $a^\mathbb{1}\cong a$
 :::
 
-::: Exercise
+:::note[Exercise]
 Prove $$\begin{aligned}
         a^{b \times c} \cong (a^b)^c
     
 \end{aligned}$$
 :::
 
-::: Exercise
+:::note[Exercise]
 Using Yoneda's lemma prove in any distributive category, aka one where
 $(a+b)\times c \cong a\times c + b \times c$ we have $$\begin{aligned}
         a^{b+c} \cong a^b \times a^c
@@ -744,8 +744,8 @@ $(a+b)\times c \cong a\times c + b \times c$ we have $$\begin{aligned}
 \end{aligned}$$
 :::
 
-::: Answer
-::: proof
+:::danger[Answer]
+:::note[Proof]
 *Proof.* Consider that by definition of the exponential we have that
 $$\begin{aligned}
             |Hom(x,a^{b+c})| &= |Hom(x \times (b+c),a)|\\

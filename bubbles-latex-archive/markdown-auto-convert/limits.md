@@ -1,4 +1,4 @@
-::: definition
+:::info[definition]
 For any categories $A$, $B$, and an element $c \in B$, there is a
 constant functor $A \xrightarrow[]{\delta c} B$ that maps every object
 in $A$ onto $c$ and every morphism in $A$ onto $id_c$

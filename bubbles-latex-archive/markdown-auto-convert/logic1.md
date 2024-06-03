@@ -1,13 +1,13 @@
 # Logic
 
-::: theorem
+:::tip[Theorem]
 For any two objects $a,b\in \mathbb{X}$ then $$\begin{aligned}
         a \rightsquigarrow b \text{ if and only if } \forall x \in \mathbb{X} \quad  x \rightsquigarrow a \implies x \rightsquigarrow b 
     
 \end{aligned}$$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* ($\Rightarrow$) Suppose $a \rightsquigarrow b$ and suppose that
 for some $x \in \mathbb{X}$, $x \rightsquigarrow a$. Then
 $x \rightsquigarrow b$ by transitivity.
@@ -17,7 +17,7 @@ $x \rightsquigarrow a \implies x \rightsquigarrow b$. By reflexivity,
 $a \rightsquigarrow a$. Thus, $a \rightsquigarrow b$ by hypothesis. ◻
 :::
 
-::: definition
+:::info[definition]
 A lattice is a partial order, where every 2 elements
 $a,b \in \mathbb{X}$ have a well defined infimim and supremum (called a
 join and meet respectively), defined to have the following properties
@@ -64,7 +64,7 @@ diagrams. $$\begin{tikzcd}
 \end{tikzcd}$$
 :::
 
-::: definition
+:::info[definition]
 A complete lattice is a lattice (aka a preorder with upper and lower
 bounds) with the additional property that there exist global upper and
 lower bounds like so.
@@ -79,7 +79,7 @@ lower bounds like so.
 your notes, thanks!!!)
 :::
 
-::: definition
+:::info[definition]
 A heyting algebra is a complete lattice such that for any two objects
 $a,b$ there exists an object $(a \implies b)$, (also written as $b^a$
 for reasons that are more understandable in cat theory), that satisfies
@@ -102,7 +102,7 @@ $a \in \mathbb{X}$ then $$\begin{aligned}
 \end{aligned}$$
 :::
 
-::: theorem
+:::tip[Theorem]
 A proposition $P$ holds in IPL (Classical logic without the law of
 excluded middle) if and only if $\textbf{Truth} \rightsquigarrow P$ in
 every heyting algebra. (Assuming you interpret joins and meets as their
@@ -114,29 +114,29 @@ logic due to issues with godel's incompleteness theorem
 
 ## Exercises
 
-::: Exercise
+:::note[Exercise]
 In any Heyting Algebra show that
 $a \wedge \neg a \rightsquigarrow \textbf{False}$
 :::
 
-::: Answer
-::: proof
+:::danger[Answer]
+:::note[Proof]
 *Proof.* Consider that $a \land \lnot a$ is equivalent to
 $a \land (a \implies \textbf{False})$ by definition of $\lnot a$. By
 modus ponens, we conclude $\textbf{False}$. ◻
 :::
 :::
 
-::: Exercise
+:::note[Exercise]
 In any Heyting Algebra show that $a \cong (\textbf{Truth} \implies a)$
 :::
 
-::: Exercise
+:::note[Exercise]
 In any Heyting Algebra show that $a \rightsquigarrow b$ if and only if
 $\textbf{Truth} \rightsquigarrow (a \implies b)$
 :::
 
-::: Exercise
+:::note[Exercise]
 In any Heyting Algebra show that:
 
 ::: tasks
@@ -144,12 +144,12 @@ $a \vee \textbf{False} \cong a$ $a \wedge \textbf{True} \cong a$
 :::
 :::
 
-::: Exercise
+:::note[Exercise]
 Show that in any Heyting Algebra that
 $(a \implies b) \rightsquigarrow (\neg b \implies \neg a)$
 :::
 
-::: Answer
+:::danger[Answer]
 We aim to show that given $b \implies \textbf{False}$ and the
 implication $a \implies b$, then $a \implies \textbf{False}$. We begin
 with writing this out in full and using the uncurrying properties of
@@ -163,7 +163,7 @@ $a \implies b \implies \textbf{False}$ then $a \implies \textbf{False}$
 and we are done.
 :::
 
-::: Exercise
+:::note[Exercise]
 ::: tasks
 In any Heyting Algebra show that
 $\neg a \vee b \rightsquigarrow a \implies b$ Prove that in a boolean
@@ -172,7 +172,7 @@ $(a \implies b) \rightsquigarrow \neg a \vee b$
 :::
 :::
 
-::: Answer
+:::danger[Answer]
 ::: tasks
 Consider that under distributivity we have $$\begin{aligned}
             a \wedge (\neg a \vee b) &\cong (a \wedge \neg a) \vee (a \wedge b)\\
@@ -184,12 +184,12 @@ $\neg a \vee b \rightsquigarrow a \implies b$
 :::
 :::
 
-::: Exercise
+:::note[Exercise]
 Show that in any Heyting Algebra that $\neg( \neg (A \wedge \neg A))$
 holds.
 :::
 
-::: Answer
+:::danger[Answer]
 To show that $\neg( \neg (A \wedge \neg A))$ is true, we first assume
 that $\neg( A \wedge \neg A)$ is false and try to arrive at a
 contradiction, namely by showing $A \wedge \neg A$ creating a
@@ -205,7 +205,7 @@ $\neg( A \wedge \neg A)$. Thus showing that
 $\neg( \neg (A \wedge \neg A))$ is true.
 :::
 
-::: Exercise
+:::note[Exercise]
 ::: tasks
 Show that in any Heyting Algebra $a \rightsquigarrow \neg(\neg a)$ Show
 that in any Heyting Algebra
@@ -213,15 +213,15 @@ $\neg a \rightsquigarrow \neg (\neg (\neg a))$
 :::
 :::
 
-::: Answer
-::: proof
+:::danger[Answer]
+:::note[Proof]
 *Proof.* To prove $a \implies \neg(\neg a)$ we should assume $\neg a$
 and aim for a contradiction. However since we know that $a$ is true,
 then $a \wedge \not a$ gives us a contradiction. Thus
 $a \implies \neg(\neg a)$. ◻
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* By definition we have that
 $\neg (\neg(\neg a))= (\neg(\neg a)) \rightsquigarrow \textbf{False}$ ◻
 :::

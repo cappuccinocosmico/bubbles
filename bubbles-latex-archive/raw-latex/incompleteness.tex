@@ -58,7 +58,13 @@ First we should consider a quick lemma:
     If a $\Gamma$ system of mathematics contains arithmetic. For every program $P$ that halts, there is a proof showing that $P$ halts.
 \end{lemma}
 \begin{proof}
-    Since $$
+    Since every turing machine can be represented using basic peano arithemtic, we can create a oof like so ~
+    \begin{enumerate}
+      \item Create a simulated turing machine and load the program onto it.
+      \item For each step taken by the program, evolve the simulated machine in a similar fasion.
+      \item Once the program finishes running in the virtual enviornment, you can claim it halts in any enviornment.
+      \item The fact that the program halts in finite number of steps guarentees the proof is finite.
+    \end{enumerate}
 \end{proof}
 
 Now consider a computer program $S^*$ defined in a similar manner to $G*$ that takes in a computer program $P$ and does the following:

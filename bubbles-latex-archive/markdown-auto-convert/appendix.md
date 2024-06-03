@@ -27,12 +27,12 @@
 
 -   Every function between the reals is infinitely differentiable.
 
-::: theorem
+:::tip[Theorem]
 If the axiom of choice holds then for any infinite set $A$ then
 $A \cong A \times A$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* ◻
 :::
 

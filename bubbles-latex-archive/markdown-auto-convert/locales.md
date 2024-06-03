@@ -1,6 +1,6 @@
 # Locales
 
-::: definition
+:::info[definition]
 A frame (also sometimes confusingly refered to as a \"locale\") is a
 partial order with:
 
@@ -13,7 +13,7 @@ the lower bound is the meet of zero elements, and the upper bound is the
 join of all elements in your frame.
 :::
 
-::: definition
+:::info[definition]
 A frame homomorphism is an arrow from frames $A \xrightarrow[]{f} B$.
 Such that $$\begin{aligned}
         f\left(\bigvee_{\alpha \in I} x_\alpha \right) &= \bigvee_{\alpha \in I} f(x_\alpha) \\
@@ -22,7 +22,7 @@ Such that $$\begin{aligned}
 \end{aligned}$$
 :::
 
-::: definition
+:::info[definition]
 A topological space $|X|$ is a set with a frame of opens
 $\mathcal{O}(X)$, such that $\mathcal{O}(X)$ is a subframe with the same
 meets and joins as the partial order $\mathcal{P}(|X|)$ under the subset
@@ -31,7 +31,7 @@ $X$ since the Frame must have an upper and lower bound and that must
 match the bounds of $\mathcal{P}(X)$)
 :::
 
-::: definition
+:::info[definition]
 A continuous function between topologies $X \xrightarrow[]{f} Y$ is a
 function from the sets $|X| \xrightarrow[]{f} |Y|$ such that the
 preimage of open sets
@@ -39,7 +39,7 @@ $\mathcal{O}(Y) \xrightarrow[]{f^{-1}(\_)} \mathcal{O}(X)$ is a frame
 homomorphism.
 :::
 
-::: definition
+:::info[definition]
 Elements of a topology can be formalized in 2 ways, an element $a$ of
 $X$ can be thought of as an element of $a \in |X|$, or alternatively as
 a homomorphism from the topological space
@@ -48,7 +48,7 @@ elment $\star$ in $\mathbb{1}$ then the continuous function equals:
 $a(\star) =a \in |X|$
 :::
 
-::: definition
+:::info[definition]
 A meet irriducible set in topological space $(X, \tau)$ is a set $Y$
 such that for any 2 opens $U,V$, then if there exists an element
 $x \in \mathbb{X}$ and $U \cap V \subseteq X \setminus \{x\}$, then
@@ -56,22 +56,22 @@ either $U \subseteq X \setminus \{x\}$ or
 $V \subseteq X \setminus \{x\}$
 :::
 
-::: theorem
+:::tip[Theorem]
 Every hausdoff space is sober.
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* See Exercises ◻
 :::
 
-::: definition
+:::info[definition]
 A locale $Y$ \"is\" a frame opens $\mathcal{O}(Y)$, and a continuous
 function between locales $X \xrightarrow[]{f} Y$ is exactly a frame
 homomorphism $f^*$ from
 $\mathcal{O}(Y) \xrightarrow[]{f^*} \mathcal{O}(X)$.
 :::
 
-::: definition
+:::info[definition]
 Elements of a locale are a continuous function from the locale
 $\mathcal{P}(\mathbb{1}) \xrightarrow[]{a} X$. However, to further
 motivate this comparision let us remember that from the subspace
@@ -82,13 +82,13 @@ can think of it as a function that takes in a set and an element, and
 returns a truth value dependant
 :::
 
-::: definition
+:::info[definition]
 A locale $L$ is compact if and only if whenever an arbitrary set of open
 has a join of the maximal element, there is a finite subset of those
 opens that also
 :::
 
-::: definition
+:::info[definition]
 A locale $X$ is disconnected if there are 2 opens
 $U,V \in \mathcal{O}(X)$, such that $U \wedge V = \phi$ and
 $U \vee V = X$. (In terms of a topological space $X$, a topological
@@ -96,20 +96,20 @@ space is disconnected if there are 2 disjoint open sets, $U,V$ such that
 $U \cup V = X$)
 :::
 
-::: definition
+:::info[definition]
 We define a functor $L$ to be a functor that takes every topological
 space, and associates it with the locale representing its frame of
 opens, and associates every continuous function with the continuous map
 on locale's corresponding to it's preimage map
 :::
 
-::: definition
+:::info[definition]
 :::
 
 From a classic topology book the topology on the real numbers is often
 defined like so
 
-::: lie
+:::danger[Useful Lie]
 A subset $U$ of the real line is a member of $\mathcal{O}(\mathbb{R})$
 if and only if $U$ can be written as an arbitrary union of open
 intervals.
@@ -127,18 +127,18 @@ $$\begin{aligned}
 \end{aligned}$$ Notice that we can actually redefine the real line with
 a stronger condition.
 
-::: lie
+:::danger[Useful Lie]
 A subset $U$ of the real line is a member of $\mathcal{O}(\mathbb{R})$
 if and only if $U$ can be written as an arbitrary union of open
 intervals with rational values.
 :::
 
-::: theorem
+:::tip[Theorem]
 The rational numbers under the standard topology are disconnected at
 every irrational number.
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Consider an irrational number $x$, then consider a monotonic
 increasing sequence of rational numbers $v_n \mapsto x$ converging to
 $x$. And a monotonic decreasing sequence $w_n \mapsto x$ also converging
@@ -152,7 +152,7 @@ to $x$. Then $$\begin{aligned}
 This definition of the real numbers is taken from toby bartel's page on
 the nlab
 
-::: definition
+:::info[definition]
 We consider the real line to be a subframe of
 $\mathcal{P}(\mathbb{Q} \times \mathbb{Q})$, we say that an element
 $X \in \mathcal{P}(\mathbb{Q} \times \mathbb{Q})$ (X can be thought of
@@ -186,7 +186,7 @@ $a \leq b \leq c \leq d$
 
 ### Exercises
 
-::: Exercise
+:::note[Exercise]
 A topological space $(X,\tau)$ is hausdorff if and only if for every
 $x,y \in X$, then there exist opens $U,V$ such that $x \in U$ and
 $y \in V$ and $U \cap V = \phi$.

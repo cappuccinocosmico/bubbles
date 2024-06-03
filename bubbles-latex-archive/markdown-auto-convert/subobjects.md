@@ -4,7 +4,7 @@ This is mainly helpful because it can help us generalize the concept of
 a subset to other categories, remember that for any subset $A \subset B$
 we can define an injective function from $A \rightarrow B$.
 
-::: definition
+:::info[definition]
 In a category $C$, a subobject $\varphi$ of $a$ is a monomorphism going
 from some object into $a$ $$\begin{tikzcd}
     \text{dom}(\varphi) & a
@@ -12,7 +12,7 @@ from some object into $a$ $$\begin{tikzcd}
 \end{tikzcd}$$
 :::
 
-::: example
+:::info[example]
 A subset is a subobject in the category $Set$, a subgroup is a subobject
 in the category $Grp$, a subspace is a subobject in the category
 $Vect_\mathbb{R}$
@@ -27,7 +27,7 @@ This also lets us talk generally about propositions on objects
 generally, where for any object $a$ the part of $a$ satisfying some
 proposition $P$ must be a subobject of $a$.
 
-::: definition
+:::info[definition]
 A subobject classifier in a category $\mathcal{C}$ is an object $\Omega$
 along with a \"Truth\" arrow
 $\mathbb{1} \xrightarrow{\textbf{Truth}} \Omega$. Such that for every
@@ -74,7 +74,7 @@ object $Hom(a, \Omega)$, this is especially useful in a cartesian closed
 category, where we can think of $\Omega^a$ as the internal object
 representing all subobjects of $a$.
 
-::: definition
+:::info[definition]
 A Topos is a category with
 
 1.  A terminal object and all products[^2]
@@ -84,7 +84,7 @@ A Topos is a category with
 3.  A subobject classifier
 :::
 
-::: example
+:::info[example]
 $Set$, $FinSet$, $Set^\mathbb{2}, DirGraph$, and depending on your
 definition $Cat$ are examples of a topos.
 :::
@@ -92,7 +92,7 @@ definition $Cat$ are examples of a topos.
 Following the example about the subobject giving a category superpowers,
 the following properties hold in any topos:
 
-::: theorem
+:::tip[Theorem]
 Every topos obeys the following rules and properties:
 
 1.  Has all sums (or in general all finite colimits)
@@ -134,7 +134,7 @@ These similar versions of these axioms can be used in any topos.
 At this point we are almost at the point of fully modeling set theory
 inside of category theory:
 
-::: definition
+:::info[definition]
 In any category $\mathcal{C}$ a natural numbers object is an object
 $\mathbb{N}$ combined with two arrows
 $\mathbb{N} \xrightarrow[]{succ} \mathbb{N}$ and
@@ -154,7 +154,7 @@ $$\begin{tikzcd}
 fact that $\mathbb{N}$ is the smallest inductive set/object.
 :::
 
-::: theorem
+:::tip[Theorem]
 Any category $\mathcal{C}$ that satisfies the following, has an internal
 logic identical to that of $Set$
 
@@ -170,7 +170,7 @@ logic identical to that of $Set$
     (Categorical version of the Axiom of Choice)
 :::
 
-::: definition
+:::info[definition]
 For any category $\mathcal{C}$ an element $e$ of an object $x$ is an
 arrow from $\mathbb{1}$ into $x$: $$\begin{aligned}
         \mathbb{1} \xrightarrow[]{e} x
@@ -178,7 +178,7 @@ arrow from $\mathbb{1}$ into $x$: $$\begin{aligned}
 \end{aligned}$$
 :::
 
-::: definition
+:::info[definition]
 A category is well pointed if for any 2 arrows $f,g$ with domain
 $a \rightrightarrows b$, then $f=g$ if and only if for every element
 $\mathbb{1} \xrightarrow{x} a$. $f \circ x = g \circ x$
@@ -196,20 +196,20 @@ classical logic these \"setlike\" objects seem to have spacial
 properties that we would typically associate with topological spaces or
 manifolds.
 
-::: theorem
+:::tip[Theorem]
 Assuming the law of excluded middle holds in your meta theory, in any
 well pointed topos has boolean logic, aka
 $\Omega \cong \mathbb{1}+\mathbb{1}$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* This seems hard and a good exercise for me personally -
 Nicole ◻
 :::
 
 ### Exercises
 
-::: Exercise
+:::note[Exercise]
 ::: tasks
 In the category $Top$ of topological spaces and continuous functions.
 Show that \"injective continuous functions\" are monomorphisms. And that
@@ -220,7 +220,7 @@ does not have a continuous inverse and is thus not an isomorphism.
 :::
 :::
 
-::: Exercise
+:::note[Exercise]
 Decode the following commutative diagrams
 
 $$\begin{tikzcd}
@@ -239,7 +239,7 @@ $$\begin{tikzcd}
 \end{tikzcd}$$
 :::
 
-::: Exercise
+:::note[Exercise]
 Decode the following commutative diagram
 
 $$\begin{tikzcd}

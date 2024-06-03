@@ -1,15 +1,15 @@
 # Calculus
 
-::: definition
+:::info[definition]
 An element $d$ in $\mathcal{R}$ is said to be a square-infinitesmal if
 $d^2=0$
 :::
 
-::: lemma
+:::tip[Lemma]
 You cant divide by square-infinitesmals.
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* If the number $(\frac{1}{d})$ did exist, it would cause
 significant problems, since $$\begin{aligned}
     1^2 &=\left(d \cdot \frac{1}{d}\right)^2\\
@@ -20,7 +20,7 @@ significant problems, since $$\begin{aligned}
 \end{aligned}$$ Since $1\neq 0$ then $\frac{1}{d}$ must not exist. ◻
 :::
 
-::: definition
+:::info[definition]
 An element $a \in \mathcal{R}$ is invertible if there is a $b$ such that
 $a\cdot b =1$
 :::
@@ -37,7 +37,7 @@ equivalent to saying that function $f$ from
 $\mathcal{R}\mapsto \mathcal{R}$ is infinetly differentiable.
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* As seen in Definition
 [\[def:derivative\]](#def:derivative){reference-type="ref"
 reference="def:derivative"}, the axiom is equivalent to saying that
@@ -51,12 +51,12 @@ tells us that it is also differentiable everywhere, you can repeat this
 process for $f'',f'''$ showing that $f$ is infinitely differentiable. ◻
 :::
 
-::: lemma
+:::tip[Lemma]
 If $0$ is the only square infinitesmal then the only number in
 $\mathcal{R}$ is $0$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Consider the identity function $f(x)=x$. Via the Kock-Lawvere
 axiom, there is a unique number $k$ such that for any $d^2=0$ we have
 $$\begin{aligned}
@@ -72,12 +72,12 @@ be unique this implies that $\mathcal{R}$ can only have one element,
 namely $0$. ◻
 :::
 
-::: theorem
+:::tip[Theorem]
 For any 2 real numbers $a,b$ if for all $d^2=0$ we have $da=db$ then
 $a=b$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Consider the function $f(x)=a\cdot x$ by
 [\[a:kl1\]](#a:kl1){reference-type="autoref" reference="a:kl1"} we know
 for the function there is a unique value of $k$ such that
@@ -91,7 +91,7 @@ If $d_1$ and $d_2$ are square-infinitesmals, then in general $d_1+d_1$
 is not a square-infinitesmal.
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* We shall show that if $(d_1+d_2)^2=0$ for all $d_1$ and $d_2$.
 This implies that the only square infinitesmal is 0. $$\begin{aligned}
     0&=(d_1+d_2)^2\\
@@ -103,11 +103,11 @@ This implies that the only square infinitesmal is 0. $$\begin{aligned}
 $d_2=0$ and in reverse to get $d_1=0$. ◻
 :::
 
-::: lemma
+:::tip[Lemma]
 If $a$ is invertible and $d^2=0$ then $(a+d)$ is invertible.
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* To prove that $a+d$ there exists a $y$ such that $y(a+d)=1$
 $$\begin{aligned}
     y(a+d)&=1\\
@@ -125,7 +125,7 @@ Many readers will be familiar with the classic rules for the order
 operation $\leq$, but we havent extended it to the reals with
 infinitesmals.
 
-::: definition
+:::info[definition]
 For any ordering of a field, the following rules apply:
 
 1.  If $a \leq b$ then for any $c \leq d$ we have $a+c \leq b+d$
@@ -135,11 +135,11 @@ For any ordering of a field, the following rules apply:
 3.  For any $a,b$ then $a \leq b$ or $b \leq a$ (or both).
 :::
 
-::: theorem
+:::tip[Theorem]
 If $d^2=0$ then $0 \leq d \leq 0$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Using part 3 of the criterion, we know that either $d\leq 0$ or
 $0\leq d$. Since we aim to show both are true, we will break this proof
 into 2 parts
@@ -159,30 +159,30 @@ reals, namely that if $a \leq b$ and $b\leq a$ that implies that $a=b$.
 
 Intervals are defined in the exact same way for the reals
 
-::: definition
+:::info[definition]
 An element $x\in [a,b]$ if $a \leq x \leq b$
 :::
 
 From here a more intuitive definition of a general infinitesmal can be
 arrived at:
 
-::: definition
+:::info[definition]
 An element $d^*$ is a general infinitesmal if $d \in [0,0]$
 :::
 
 ## Derivatives
 
-::: definition
+:::info[definition]
 For any function $f(x)$ the derivative $f'(x)$ is the unique funtion
 such that for any $d^2=0$ then
 $$f(x+d)=f(x)+d\cdot f'(x)$$[]{#def:derivative label="def:derivative"}
 :::
 
-::: theorem
+:::tip[Theorem]
 The derivative of $f(g(x))$ is $g'(x)f'(g(x))$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Using our definitions we can attempt to expand $f(g(x+d))$ for
 $d^2=0$ like before using the definition of the derivative of $f$ and
 $g$ $$\begin{aligned}
@@ -198,11 +198,11 @@ use the definition of the derivative again $$\begin{aligned}
 \end{aligned}$$ ◻
 :::
 
-::: theorem
+:::tip[Theorem]
 The derivative of $f(x)\cdot g(x)$ is $f'(x)\cdot g(x)+f(x)\cdot g'(x)$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Let us use the definition of the derivative twice for each
 component $$\begin{aligned}
     (f\times g)(x+d) &= f(x+d)\cdot g(x+d)\\
@@ -214,12 +214,12 @@ component $$\begin{aligned}
 \end{aligned}$$ ◻
 :::
 
-::: theorem
+:::tip[Theorem]
 If every output of $f(x)$ is invertible, the derivative of
 $\frac{g(x)}{f(x)}$ is $\frac{g'(x)f(x)-g(x)f'(x)}{f(x)^2}$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Since $a-d$ is invertible if $a$ is invertible, then it is
 possible to multiply by $\frac{a+d}{a+d}$, this shall be useful in the
 second step. $$\begin{aligned}
@@ -233,11 +233,11 @@ second step. $$\begin{aligned}
 \end{aligned}$$ ◻
 :::
 
-::: theorem
+:::tip[Theorem]
 The derivative of $x^n$ is $n*x^{n-1}$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Using induction we know that the derivative of $f(x)=x$ is $1$
 since $f(x+d)=x+1 \cdot d$. Thus with our inductive hypothesis saying
 that $(x^{n-1})'=(n-1)x^{n-2}$, or stating it with the definition of the
@@ -252,14 +252,14 @@ algebraicly expand out $(x+d)^n$ like so: $$\begin{aligned}
 \end{aligned}$$ ◻
 :::
 
-::: theorem
+:::tip[Theorem]
 If there exist 3 functions $f,g,h$ such that $h(x)g(x)=f(x)$, then if
 there exists an $a$ such that $f(a)=g(a)=0$, then $h(a)g'(a)=f'(a)$.
 (Most textbooks express this using fractions like so
 $h(x)=\frac{f(x)}{g(x)}$ and $h(a)=\frac{f'(a)}{g'(a)}$)
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Notice that since $h(x)$ can be written as a quotent, the
 following identity must always hold, plugging in the value $(a+d)$ where
 $d^2=0$ lets us use the definition of the derivative to simplify things.
@@ -281,36 +281,36 @@ Every function $f$ there exists a function $g$ such that $g'=f$.
 (Oftentimes $g$ will be written as $\int f$)
 :::
 
-::: theorem
+:::tip[Theorem]
 :::
 
-::: theorem
+:::tip[Theorem]
 The integral of $\int (f \cdot g')$ is given by $fg - \int (f' g)$
 :::
 
-::: theorem
+:::tip[Theorem]
 []{#thm:taylor label="thm:taylor"} For any function $f$ we have that
 $$f(x)=\sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k + \int_a^x f^{(n+1)}(t)\frac{(x-t)^{n}}{n!}dt$$
 :::
 
 # Exponentials 
 
-::: definition
+:::info[definition]
 A function $f(x)$ is **multiplicative-exponential** if, for any numbers
 where $a+b=c+d$ then $f(a) \cdot f(b)=f(c)\cdot f(d)$
 :::
 
-::: definition
+:::info[definition]
 A function $f(x)$ is **derivational-exponential** if there exists a $k$
 such that $f'(x)=k\cdot f(x)$
 :::
 
-::: theorem
+:::tip[Theorem]
 Multiplicative Exponential functions are Derivational Exponential
 Functions
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Via the definition of the derivative we have that where $d^2=0$
 $$f(x+d)=f(x)+d\cdot f'(x)$$ But since $0+(x+d)=x+d$ and $f$ is
 exponential we have that $$f(x+d)=\frac{f(x)f(d)}{f(0)}$$ And via the
@@ -325,22 +325,22 @@ like so to say that $$\begin{aligned}
 
 Thus $f(x)$ is proportional to its own derivative.
 
-::: theorem
+:::tip[Theorem]
 For any $c \in [a,b]$ then there exists a value $z \in [f(a),f(b)]$ such
 that $z=f(c)$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Almost certainly impossible with current axioms. Might be
 provable using the axiom that $f'0$ implies that $f$ is constant. ◻
 :::
 
-::: theorem
+:::tip[Theorem]
 For any numbers $a,b$ and a function $f$. There exists a $c \in [a,b]$
 such that $$f'(c)=\frac{f(a)-f(b)}{a-b}$$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Using the fundamental theorem of calculus we have that
 $$\begin{aligned}
     \frac{f(a)-f(b)}{a-b}&=\frac{\int_a^b f'}{a-b}
@@ -348,12 +348,12 @@ $$\begin{aligned}
 \end{aligned}$$ ◻
 :::
 
-::: theorem
+:::tip[Theorem]
 If for any 2 derivational exponential functions $f$ and $g$ such that
 $f(c)=g(c)$ and $f'(c)=g'(c)$. Then $f=g$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Since both exponentials are proportional to their own
 derivative we have that $f^{(n)}(c)=g^{(n)}(c)$. They must have the same
 scaling factor $f'(x)=k*f(x)$Using the taylor series expansion we have
@@ -407,11 +407,11 @@ $$\begin{aligned}
 \end{aligned}$$ ◻
 :::
 
-::: theorem
+:::tip[Theorem]
 Every function proportional to its own derivative is exponential.
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Let our function be $f'=k \cdot f$. By the axiom of integration
 there is a function $F$ such that $F'=f$. Then we can define a special
 function. Letting $a+b=c+d$ $$\begin{aligned}
@@ -455,10 +455,10 @@ $$\begin{tikzcd}
     \arrow["{!}", dashed, from=1-2, to=2-2]
 \end{tikzcd}$$
 
-::: theorem
+:::tip[Theorem]
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* So what does a differentiable function
 $G: \mathcal{C}\mapsto \mathcal{R}$ look like?
 
@@ -472,14 +472,14 @@ $f(a+bi)=g(a+bi)+i*h(a+bi)$. Then by definition $$\begin{aligned}
 
 # Homework Solutions
 
-::: lemma
+:::tip[Lemma]
 The inequality below is true $$\begin{aligned}
     n!<n^n<(2n)!
   
 \end{aligned}$$ for $n>x^2$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* First we can expand out the terms on both sides
 $$\begin{aligned}
     {x\cdot x \cdot x \cdot \dots \cdot x}<{1\cdot 2 \cdot 3\cdot \dots \cdot n}

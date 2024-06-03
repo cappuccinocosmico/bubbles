@@ -1,4 +1,4 @@
-::: definition
+:::info[definition]
 A well order on a set $X$ is a partial order on $X$ where every subset
 of $X$ has a least element.
 :::
@@ -13,7 +13,7 @@ Here are some fun facts about ordinals
 
 3.  Any set with a well order is order isomorphic to exactly 1 ordinal.
 
-::: theorem
+:::tip[Theorem]
 For any set $\alpha$, consider the ordinal $\omega_\alpha$ to be the
 smallest ordinal with cardinality $|\alpha|$. Then $\omega_\alpha$ is
 order isomorphic to $\omega_\alpha \times \omega_\alpha$ under the
@@ -25,7 +25,7 @@ $$(x, y)<(w, z) \Longleftrightarrow\left\{\begin{array}{l}
 \end{array}\right.$$
 :::
 
-::: proof
+:::note[Proof]
 *Proof.* Firstly, it is obvious that $k$ is at most of the order type of
 $K \times K$ since the order type of $k$ can be simply be written as
 $\alpha \mapsto(\alpha, \alpha)$. The other direction we prove by
